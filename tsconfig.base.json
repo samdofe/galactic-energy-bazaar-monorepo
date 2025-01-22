@@ -18,6 +18,7 @@
       "dashboard/Routes": [
         "apps/dashboard/src/app/remote-entry/entry.routes.ts"
       ],
+      "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
       "trades/Routes": ["apps/trades/src/app/remote-entry/entry.routes.ts"]
     }
   },

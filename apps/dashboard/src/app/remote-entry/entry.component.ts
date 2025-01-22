@@ -5,6 +5,9 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 @Component({
   imports: [CommonModule, NxWelcomeComponent],
   selector: 'dashboard-entry',
-  template: `<dashboard-nx-welcome></dashboard-nx-welcome>`,
+  template: `
+    <h1>Dashboard</h1>
+    <dashboard-nx-welcome></dashboard-nx-welcome>
+  `,
 })
 export class RemoteEntryComponent {}
