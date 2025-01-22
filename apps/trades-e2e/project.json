@@ -1,0 +1,10 @@
+{
+  "name": "trades-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/trades-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["trades"],
+  "// targets": "to see all targets run: nx show project trades-e2e --web",
+  "targets": {}
+}

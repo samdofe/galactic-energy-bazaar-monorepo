@@ -1,8 +1,15 @@
 {
   "name": "@galactic-energy-bazaar-monorepo/source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
-  "scripts": {},
+  "author": "Samuel Documet Ferroni <samuelferroni47@gmail.com>",
+  "engines": {
+    "node": ">=22.13.0 < 23.0.0"
+  },
+  "scripts": {
+    "serve:shell": "nx serve shell",
+    "serve:dashboard": "nx serve dashboard"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.0.0",
@@ -14,7 +21,8 @@
     "@angular/platform-browser-dynamic": "~19.0.0",
     "@angular/router": "~19.0.0",
     "rxjs": "~7.8.0",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.0",
+    "@nx/angular": "20.3.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~19.0.0",
@@ -24,13 +32,15 @@
     "@angular/compiler-cli": "~19.0.0",
     "@angular/language-service": "~19.0.0",
     "@eslint/js": "^9.8.0",
-    "@nx/angular": "20.3.2",
+    "@module-federation/enhanced": "^0.8.8",
     "@nx/cypress": "20.3.2",
     "@nx/eslint": "20.3.2",
     "@nx/eslint-plugin": "20.3.2",
     "@nx/jest": "20.3.2",
     "@nx/js": "20.3.2",
+    "@nx/module-federation": "20.3.2",
     "@nx/web": "20.3.2",
+    "@nx/webpack": "20.3.2",
     "@nx/workspace": "20.3.2",
     "@schematics/angular": "~19.0.0",
     "@swc-node/register": "~1.9.1",
