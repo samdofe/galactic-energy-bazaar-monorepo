@@ -83,10 +83,16 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "jestConfig": "apps/shell/jest.config.ts"
+        "reportsDirectory": "../../coverage/apps/shell"
+      },
+      "configurations": {
+        "ui": {
+          "ui": true,
+          "watch": true
+        }
       }
     },
     "serve-static": {

@@ -6,7 +6,6 @@ import { NxWelcomeComponent } from './nx-welcome.component';
   imports: [CommonModule, NxWelcomeComponent],
   selector: 'dashboard-entry',
   template: `
-    <h1>Dashboard</h1>
     <dashboard-nx-welcome></dashboard-nx-welcome>
   `,
 })
