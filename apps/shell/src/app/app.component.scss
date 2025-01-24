@@ -6,21 +6,21 @@
   @include mat.sidenav-overrides((
     container-background-color: transparent,
     content-background-color: transparent,
-    container-text-color: var(--mat-sys-tertiary),
-    content-text-color:var(--mat-sys-tertiary),
+    container-text-color: var(--mat-sys-primary),
+    content-text-color:var(--mat-sys-primary),
     container-width: 150px,
   ));
   @include mat.toolbar-overrides((
     container-background-color: transparent,
-    container-text-color: var(--mat-sys-tertiary),
+    container-text-color: var(--mat-sys-primary),
   ));
   @include mat.icon-overrides((
-    color: var(--mat-sys-tertiary),
+    color: var(--mat-sys-primary),
   ));
   @include mat.list-overrides((
     list-item-label-text-font: variables.$vt323-font,
-    list-item-label-text-color: var(--mat-sys-tertiary),
-    list-item-focus-label-text-color: var(--mat-sys-tertiary),
-    list-item-hover-label-text-color: var(--mat-sys-tertiary),
+    list-item-label-text-color: var(--mat-sys-primary),
+    list-item-focus-label-text-color: var(--mat-sys-primary),
+    list-item-hover-label-text-color: var(--mat-sys-primary),
   ));
 }
