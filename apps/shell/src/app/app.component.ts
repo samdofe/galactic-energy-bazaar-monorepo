@@ -1,6 +1,6 @@
 import { Component, computed, HostListener, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { FedsCdkSideNavComponent, IFedsCdkSideNavMenuItem } from '@feds/cdk';
+import { FedsCdkSideNavComponent, IFedsCdkSideNavMenuItem } from '@feds/cdk/side-nav';
 import { CommonModule } from '@angular/common';
 
 @Component({
