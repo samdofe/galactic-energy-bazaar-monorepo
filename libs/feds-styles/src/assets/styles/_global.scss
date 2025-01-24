@@ -18,7 +18,7 @@ html {
 
   @include mat.theme-overrides(
     (
-      background: #0d1321,
+      background: rgba(13,19,33,0.7),
       /* Updated background */ error: #ffb4ab,
       error-container: #93000a,
       inverse-on-surface: #2d3131,

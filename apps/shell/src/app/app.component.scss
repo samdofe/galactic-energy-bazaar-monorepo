@@ -1,28 +1,26 @@
 @use 'libs/feds-styles/src/assets/styles/variables' as variables;
+@use '@angular/material' as mat;
 
 .router-container{
   font-family: variables.$vt323-font, sans-serif;
-}
-
-.main-content {
-  width: calc(100% - 5rem);
-  font-family: variables.$vt323-font, sans-serif;
-  color: var(--mat-sys-primary);
-  margin-left: 5rem;
-  z-index: 0;
-  position: relative;
-  top: 0;
-  transition: all 0.5s ease;
-  background: #f4f7fa;
-  padding: 3rem;
-}
-
-.main-content-trimmed {
-  width: calc(100% - 16.5625rem);
-  margin-left: 16.5625rem;
-}
-
-.main-content-md-screen {
-  width: calc(100% - 5rem);
-  margin-left: 5rem;
+  @include mat.sidenav-overrides((
+    container-background-color: transparent,
+    content-background-color: transparent,
+    container-text-color: var(--mat-sys-tertiary),
+    content-text-color:var(--mat-sys-tertiary),
+    container-width: 150px,
+  ));
+  @include mat.toolbar-overrides((
+    container-background-color: transparent,
+    container-text-color: var(--mat-sys-tertiary),
+  ));
+  @include mat.icon-overrides((
+    color: var(--mat-sys-tertiary),
+  ));
+  @include mat.list-overrides((
+    list-item-label-text-font: variables.$vt323-font,
+    list-item-label-text-color: var(--mat-sys-tertiary),
+    list-item-focus-label-text-color: var(--mat-sys-tertiary),
+    list-item-hover-label-text-color: var(--mat-sys-tertiary),
+  ));
 }
