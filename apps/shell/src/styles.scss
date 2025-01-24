@@ -1,1 +1,12 @@
 @use 'libs/feds-styles/src/assets/styles';
+
+body {
+  margin: 0;
+  height: 100vh; /* Ensures the background covers the viewport */
+
+  background-image: url('../public/images/background-v5.png'); /* Path to the image */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  font-family: Arial, sans-serif; /* Optional font styling */
+}

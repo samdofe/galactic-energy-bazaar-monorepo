@@ -3,6 +3,7 @@
   "dest": "../../dist/libs/feds-styles",
   "assets": ["./src/assets/**/*.*"],
   "lib": {
-    "entryFile": "src/index.ts"
+    "entryFile": "src/index.ts",
+    "styleIncludePaths": ["src/styles"]
   }
 }

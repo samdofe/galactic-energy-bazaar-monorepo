@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav">
+  <mat-sidenav
+    #drawer
+    class="sidenav__menu"
+    [attr.role]="(isHandset() ? 'dialog' : 'navigation')"
+    [mode]="isHandset() ? 'over' : 'side'"
+    [opened]="isOpen()"
+  >
+    @if (imgLogo()) {
+      <div class="sidenav__menu__header">
+        <img src="{{imgLogo()}}" alt="Atlantis Logo" class="sidenav__menu__logo">
+      </div>
+    } @else {
+      <div class='planet-container'>
+        <div class="planet-container__world">
+          <div class='planet-container__world__night'></div>
+          <div class='planet-container__world__day'></div>
+          <div class='planet-container__world__clouds'></div>
+          <div class='planet-container__world__inner-shadow'></div>
+        </div>
+      </div>
+    }
+    <mat-nav-list>
+      @for (item of items(); track item) {
+        <div class="sidenav__menu__nav-section">
+          <a mat-list-item routerLink="{{item.routeLink}}" routerLinkActive="active" class="sidenav__menu__nav-item">
+            <div class="sidenav__menu__nav-item__content">
+              <mat-icon>{{ item.icon }}</mat-icon>
+              <span>{{ item.label }}</span>
+            </div>
+          </a>
+        </div>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="toggleSidebar()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="page-title">{{pageTitle()}}</span>
+    </mat-toolbar>
+    <div class="sidenav__content">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

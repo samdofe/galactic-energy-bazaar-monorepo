@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'trades-nx-welcome',
   imports: [CommonModule],
   template: `
-    <div id="welcome">
+    <div id="trades-welcome">
       <h1>
         <span> Hello there, </span>
         Welcome trades 👋
