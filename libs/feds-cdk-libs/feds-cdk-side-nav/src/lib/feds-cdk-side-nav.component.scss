@@ -1,0 +1,66 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.sidenav-container {
+  height: 100%;
+  //background-color: #2A2F3D;
+}
+
+.sidenav {
+  width: 260px;
+  //background-color: #2A2F3D;
+  //color: white;
+  //border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidenav-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav-section {
+  margin: 16px 0;
+}
+
+.nav-section-title {
+  padding: 0 16px;
+  margin: 8px 0;
+  //color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+mat-nav-list a {
+  //color: white;
+  height: 48px;
+}
+
+mat-nav-list a.active {
+  //background-color: rgba(255,255,255,0.1);
+}
+
+mat-nav-list mat-icon {
+  margin-right: 16px;
+  //color: rgba(255,255,255,0.7);
+}
+
+mat-toolbar {
+  //background-color: #2A2F3D;
+  //color: white;
+  //border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.content {
+  padding: 20px;
+  //background-color: #222631;
+  min-height: calc(100vh - 64px);
+}

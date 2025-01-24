@@ -1,0 +1,67 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [attr.role]="(isHandset() ? 'dialog' : 'navigation')"
+    [mode]="isHandset() ? 'over' : 'side'"
+    [opened]="isOpen()"
+  >
+    <div class="sidenav-header">
+      <img src="assets/logo.png" alt="Atlantis Logo" class="logo">
+    </div>
+
+    <mat-nav-list>
+      <div class="nav-section">
+        <h3 class="nav-section-title">Dashboards</h3>
+        <a mat-list-item routerLink="/e-commerce" routerLinkActive="active">
+          <mat-icon>shopping_cart</mat-icon>
+          <span>E-Commerce</span>
+        </a>
+      </div>
+
+      <div class="nav-section">
+        <h3 class="nav-section-title">Apps</h3>
+        <a mat-list-item routerLink="/blog" routerLinkActive="active">
+          <mat-icon>article</mat-icon>
+          <span>Blog</span>
+        </a>
+        <a mat-list-item routerLink="/calendar" routerLinkActive="active">
+          <mat-icon>calendar_today</mat-icon>
+          <span>Calendar</span>
+        </a>
+        <a mat-list-item routerLink="/chat" routerLinkActive="active">
+          <mat-icon>chat</mat-icon>
+          <span>Chat</span>
+        </a>
+        <!-- Add more menu items as needed -->
+      </div>
+
+      <div class="nav-section">
+        <h3 class="nav-section-title">UI Kit</h3>
+        <a mat-list-item routerLink="/form-layout" routerLinkActive="active">
+          <mat-icon>dashboard</mat-icon>
+          <span>Form Layout</span>
+        </a>
+        <!-- Add more UI Kit items -->
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="toggleSidebar()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{pageTitle()}}</span>
+    </mat-toolbar>
+
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

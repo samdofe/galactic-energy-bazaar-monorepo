@@ -1,11 +1,28 @@
-.remote-menu{
-  font-size: 25px;
-}
-
-.card-container{
-  font-family: var(--vt323-font), sans-serif;
-}
+@use 'libs/feds-styles/src/assets/styles/variables' as variables;
 
 .router-container{
-  font-family: var(--vt323-font), sans-serif;
+  font-family: variables.$vt323-font, sans-serif;
+}
+
+.main-content {
+  width: calc(100% - 5rem);
+  font-family: variables.$vt323-font, sans-serif;
+  color: var(--mat-sys-primary);
+  margin-left: 5rem;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  transition: all 0.5s ease;
+  background: #f4f7fa;
+  padding: 3rem;
+}
+
+.main-content-trimmed {
+  width: calc(100% - 16.5625rem);
+  margin-left: 16.5625rem;
+}
+
+.main-content-md-screen {
+  width: calc(100% - 5rem);
+  margin-left: 5rem;
 }
