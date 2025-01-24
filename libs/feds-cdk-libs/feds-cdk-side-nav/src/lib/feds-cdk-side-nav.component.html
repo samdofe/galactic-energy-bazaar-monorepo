@@ -1,49 +1,36 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav">
   <mat-sidenav
     #drawer
-    class="sidenav"
+    class="sidenav__menu"
     [attr.role]="(isHandset() ? 'dialog' : 'navigation')"
     [mode]="isHandset() ? 'over' : 'side'"
     [opened]="isOpen()"
   >
-    <div class="sidenav-header">
-      <img src="assets/logo.png" alt="Atlantis Logo" class="logo">
-    </div>
-
+    @if (imgLogo()) {
+      <div class="sidenav__menu__header">
+        <img src="{{imgLogo()}}" alt="Atlantis Logo" class="sidenav__menu__logo">
+      </div>
+    } @else {
+      <div class='planet-container'>
+        <div class="planet-container__world">
+          <div class='planet-container__world__night'></div>
+          <div class='planet-container__world__day'></div>
+          <div class='planet-container__world__clouds'></div>
+          <div class='planet-container__world__inner-shadow'></div>
+        </div>
+      </div>
+    }
     <mat-nav-list>
-      <div class="nav-section">
-        <h3 class="nav-section-title">Dashboards</h3>
-        <a mat-list-item routerLink="/e-commerce" routerLinkActive="active">
-          <mat-icon>shopping_cart</mat-icon>
-          <span>E-Commerce</span>
-        </a>
-      </div>
-
-      <div class="nav-section">
-        <h3 class="nav-section-title">Apps</h3>
-        <a mat-list-item routerLink="/blog" routerLinkActive="active">
-          <mat-icon>article</mat-icon>
-          <span>Blog</span>
-        </a>
-        <a mat-list-item routerLink="/calendar" routerLinkActive="active">
-          <mat-icon>calendar_today</mat-icon>
-          <span>Calendar</span>
-        </a>
-        <a mat-list-item routerLink="/chat" routerLinkActive="active">
-          <mat-icon>chat</mat-icon>
-          <span>Chat</span>
-        </a>
-        <!-- Add more menu items as needed -->
-      </div>
-
-      <div class="nav-section">
-        <h3 class="nav-section-title">UI Kit</h3>
-        <a mat-list-item routerLink="/form-layout" routerLinkActive="active">
-          <mat-icon>dashboard</mat-icon>
-          <span>Form Layout</span>
-        </a>
-        <!-- Add more UI Kit items -->
-      </div>
+      @for (item of items(); track item) {
+        <div class="sidenav__menu__nav-section">
+          <a mat-list-item routerLink="{{item.routeLink}}" routerLinkActive="active" class="sidenav__menu__nav-item">
+            <div class="sidenav__menu__nav-item__content">
+              <mat-icon>{{ item.icon }}</mat-icon>
+              <span>{{ item.label }}</span>
+            </div>
+          </a>
+        </div>
+      }
     </mat-nav-list>
   </mat-sidenav>
 
@@ -59,8 +46,7 @@
       </button>
       <span>{{pageTitle()}}</span>
     </mat-toolbar>
-
-    <div class="content">
+    <div class="sidenav__content">
       <ng-content></ng-content>
     </div>
   </mat-sidenav-content>

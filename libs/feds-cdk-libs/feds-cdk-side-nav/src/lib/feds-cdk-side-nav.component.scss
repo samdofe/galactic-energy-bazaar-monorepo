@@ -1,47 +1,62 @@
+@use '@angular/material' as mat;
+
 :host {
   display: block;
   height: 100vh;
-  font-family: inherit;
 }
 
-.sidenav-container {
+.sidenav{
   height: 100%;
-  //background-color: #2A2F3D;
-}
+  &__menu {
+    @include mat.sidenav-overrides((
+      container-width: 180px,
+    ));
+    @include mat.list-overrides((
+      list-item-label-text-size: 20px,
+    ));
+    &__header {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__logo{
+      height: 120px;
+    }
+    &__nav-section {
+      margin: 24px 0;
+    }
+    &__nav-item {
+      height: auto !important;
+      padding: 16px 0;
 
-.sidenav {
-  width: 260px;
-  //background-color: #2A2F3D;
-  //color: white;
-  //border-right: 1px solid rgba(255,255,255,0.1);
-}
-
-.sidenav-header {
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  //border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.logo {
-  height: 40px;
-}
-
-.nav-section {
-  margin: 16px 0;
+      &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        mat-icon {
+          font-size: 50px;
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+  &__content {
+    padding: 20px;
+    min-height: calc(100vh - 64px);
+  }
 }
 
 .nav-section-title {
   padding: 0 16px;
   margin: 8px 0;
-  //color: rgba(255,255,255,0.7);
   font-size: 0.75rem;
   text-transform: uppercase;
 }
 
 mat-nav-list a {
-  //color: white;
   height: 48px;
 }
 
@@ -49,19 +64,76 @@ mat-nav-list a.active {
   //background-color: rgba(255,255,255,0.1);
 }
 
-mat-nav-list mat-icon {
-  margin-right: 16px;
-  //color: rgba(255,255,255,0.7);
+.planet-container {
+  margin-top: 20px;
+  margin-left: 20px;
+  overflow: hidden;
+  &__world {
+    border-radius: 50%;
+    box-shadow: 0.5px -0.3px 1px 0.3px #5e90f1;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+    width: 120px;
+    z-index: 1;
+    &__night {
+      animation: rotate-night 100s linear infinite;
+      background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg);
+      background-size: 200%;
+      height: 120px;
+      position: absolute;
+      width: 120px;
+      z-index: 2;
+    }
+    &__day {
+      animation: rotate-day 100s linear infinite;
+      background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg);
+      background-size: 200%;
+      border-left: solid 0.1px black;
+      border-radius: 50%;
+      box-shadow: 0.5px 0 2px 1px #040615 inset;
+      height: 120px;
+      margin-left: 11px;
+      position: absolute;
+      width: 120px;
+      z-index: 3;
+    }
+    &__clouds {
+      animation: rotate-day 70s linear infinite, spin-clouds 120s ease infinite;
+      background-image: url(https://www.solarsystemscope.com/textures/download/2k_earth_clouds.jpg);
+      background-size: 200%;
+      border-radius: 50%;
+      box-shadow: 0.5px 0 2px 1px #040615 inset, -0.9px 0px 2px 1px #5e90f1 inset;
+      height: 120px;
+      margin-left: 10px;
+      opacity: 0.45;
+      position: absolute;
+      width: 120px;
+      z-index: 4;
+    }
+    &__inner-shadow {
+      background: transparent;
+      border-radius: 50%;
+      box-shadow: -0.5px 0 1px 0.1px #152b57 inset, 0.5px 0 1px 0.1px #040615 inset;
+      height: 120px;
+      margin-left: 0;
+      position: absolute;
+      width: 120px;
+      z-index: 5;
+    }
+  }
 }
 
-mat-toolbar {
-  //background-color: #2A2F3D;
-  //color: white;
-  //border-bottom: 1px solid rgba(255,255,255,0.1);
+@keyframes rotate-day {
+  0% { background-position: 120% 0; }
+  100% { background-position: -80% 0; }
 }
-
-.content {
-  padding: 20px;
-  //background-color: #222631;
-  min-height: calc(100vh - 64px);
+@keyframes rotate-night {
+  0% { background-position: calc(120% + 12px) 0; }
+  100% { background-position: calc(-80% + 12px) 0; }
+}
+@keyframes spin-clouds {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg); }
+  100% { transform: rotate(0deg); }
 }

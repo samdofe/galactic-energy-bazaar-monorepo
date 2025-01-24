@@ -1,6 +1,6 @@
 import { Component, computed, HostListener, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { FedsCdkSideNavComponent, IFedsCdkSideNavMenuItem } from '@feds/cdk/side-nav';
+import { FedsCdkSideNavComponent, IFedsCdkSideNavConfig, IFedsCdkSideNavMenuItem } from '@feds/cdk/side-nav';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -23,27 +23,31 @@ export class AppComponent implements OnInit {
   disabled = false;
   // Parent component
 /*  apps: IFedsCdkSideNavMenuItem[] = [
-    { icon: 'analytics', name: 'Dashboard', route: '/dashboard' },
-    { icon: 'trending_up', name: 'Trades', route: '/trades' },
+    { icon: 'analytics', label: 'Dashboard', routeLink: '/dashboard' },
+    { icon: 'trending_up', label: 'Trades', routeLink: '/trades' },
   ];*/
 
-  apps = signal<{routeLink:string, icon:string, label:string}[]>( [
-    {
-      routeLink: 'dashboard',
-      icon: 'analytics',
-      label: 'Dashboard',
-    },
-    {
-      routeLink: 'trades',
-      icon: 'trending_up',
-      label: 'Trade',
-    },
-    {
-      routeLink: 'login',
-      icon: 'login',
-      label: 'Login',
-    }
-  ]);
+  menuConfig = signal<IFedsCdkSideNavConfig>({
+    imgLogo: 'images/geb-logo-v3.webp',
+    title: 'Galactic Energy Bazaar',
+    items:  [
+      {
+        routeLink: 'dashboard',
+        icon: 'analytics',
+        label: 'Dashboard',
+      },
+      {
+        routeLink: 'trades',
+        icon: 'trending_up',
+        label: 'Trade',
+      },
+      {
+        routeLink: 'login',
+        icon: 'login',
+        label: 'Login',
+      }
+    ]
+  });
 
   @HostListener('window:resize')
   onResize() {

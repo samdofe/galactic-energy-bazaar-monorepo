@@ -1,5 +1,7 @@
 <div class="router-container">
-  <feds-cdk-side-nav>
+  <feds-cdk-side-nav
+    [config]="menuConfig()"
+  >
     <router-outlet />
   </feds-cdk-side-nav>
 </div>
