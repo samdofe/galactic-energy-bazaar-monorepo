@@ -1,8 +1,8 @@
 {
-  "name": "feds-cdk-side-nav",
+  "name": "feds-core-auth",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/feds-cdk-libs/feds-cdk-side-nav/src",
-  "prefix": "feds-cdk",
+  "sourceRoot": "libs/feds-core-libs/feds-core-auth/src",
+  "prefix": "feds-core-auth",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -10,14 +10,14 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/feds-cdk-libs/feds-cdk-side-nav/ng-package.json"
+        "project": "libs/feds-core-libs/feds-core-auth/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/feds-cdk-libs/feds-cdk-side-nav/tsconfig.lib.prod.json"
+          "tsConfig": "libs/feds-core-libs/feds-core-auth/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/feds-cdk-libs/feds-cdk-side-nav/tsconfig.lib.json"
+          "tsConfig": "libs/feds-core-libs/feds-core-auth/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../../coverage/libs/feds-cdk-libs/feds-cdk-side-nav"
+        "reportsDirectory": "../../../coverage/libs/feds-core-libs/feds-core-auth"
       },
       "configurations": {
         "ui": {

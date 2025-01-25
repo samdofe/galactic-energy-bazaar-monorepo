@@ -15,11 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@feds/cdk/*": ["libs/feds-cdk/src/*"],
       "@feds/cdk-side-nav": [
         "libs/feds-cdk-libs/feds-cdk-side-nav/src/index.ts"
       ],
+      "@feds/cdk/*": ["libs/feds-cdk/src/*"],
       "@feds/cdk/side-nav": ["libs/feds-cdk/side-nav/src/index.ts"],
+      "@feds/core-auth": ["libs/feds-core-libs/feds-core-auth/src/index.ts"],
+      "@feds/core/*": ["libs/feds-core/src/*"],
+      "@feds/core/auth": ["libs/feds-core/auth/src/index.ts"],
       "@feds/styles": ["libs/feds-styles/src/index.ts"],
       "dashboard/Routes": [
         "apps/dashboard/src/app/remote-entry/entry.routes.ts"
