@@ -3,7 +3,7 @@ import { HttpHandlerFn, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FedsCoreAuthStore } from '../feds-core-auth.store';
 
-export function authInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<any> {
+export function fedsCoreAuthInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn): Observable<any> {
   const authStore = inject(FedsCoreAuthStore);
   const token = authStore.token();
 

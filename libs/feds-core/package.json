@@ -5,8 +5,5 @@
     "@angular/common": "^19.0.0",
     "@angular/core": "^19.0.0"
   },
-  "dependencies": {
-    "@feds/core-auth": "workspace:0.0.1"
-  },
   "sideEffects": false
 }

@@ -1,5 +1,5 @@
 export interface IFedsCoreAuthCredentials {
-  username: string;
+  email: string;
   password: string;
 }
 
@@ -21,5 +21,5 @@ export interface IFedsCoreAuthMe {
 export interface IFedsCoreAuthState {
   isLoading: boolean;
   token: string | null;
-  user: IFedsCoreAuthMe | null;
+  me: IFedsCoreAuthMe | null;
 }

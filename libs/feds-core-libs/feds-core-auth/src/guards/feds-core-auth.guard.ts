@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { FedsCoreAuthStore } from '../feds-core-auth.store';
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const fedsCoreAuthGuard: CanActivateFn = (route, state) => {
   const authStore = inject(FedsCoreAuthStore);
   const router = inject(Router);
 
