@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NxWelcomeComponent } from './nx-welcome.component';
 
+console.log('Trades :: entry-component : ', process.env.MODE);
+
 @Component({
   imports: [CommonModule, NxWelcomeComponent],
   selector: 'trades-entry',
