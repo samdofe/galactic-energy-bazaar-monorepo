@@ -12,20 +12,20 @@ import { fedsCoreAuthService } from './feds-core-auth.service';
 const initialState: IFedsCoreAuthState = {
   token: null,
   isLoading: false,
-  user: null,
+  me: null,
 };
 
 export const FedsCoreAuthStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
   withMethods((store, authService = inject(fedsCoreAuthService)) => {
-    const me = rxMethod<void>(
+    const getMe = rxMethod<void>(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap(() => {
-          return authService.me().pipe(
+          return authService.fetchMe().pipe(
             tapResponse({
-              next: (user) => patchState(store, { user }),
+              next: (me) => patchState(store, { me }),
               error: console.error,
               finalize: () => patchState(store, { isLoading: false }),
             })
@@ -50,19 +50,19 @@ export const FedsCoreAuthStore = signalStore(
             })
           );
         }),
-        map(() => me())
+        map(() => getMe())
       )
     );
 
     const logOut = () => {
       localStorage.removeItem('token');
-      patchState(store, { token: null, user: null });
+      patchState(store, { token: null, me: null });
     };
 
     return {
       login,
       logOut,
-      me,
+      getMe,
     };
   })
 );
