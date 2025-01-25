@@ -13,8 +13,12 @@
     "build:libs": "nx reset && nx run-many -t build -p feds-styles --verbose",
     "test:project": "nx run $PROJECT:test",
     "test:project:ui": "nx run $PROJECT:test:ui",
-    "g:library": "nx g @nx/angular:library --name=feds-$NAME --publishable --style=scss --simpleName --flat --prefix=feds-$NAME  --directory=libs/feds-$NAME --importPath=@feds/$NAME",
-    "g:library:dry": "nx g @nx/angular:library --name=feds-$NAME --publishable --style=scss --simpleName --flat --prefix=feds-$NAME  --directory=libs/feds-$NAME --importPath=@feds/$NAME --dry-run"
+    "g:library": "nx g @nx/angular:library --name=feds-$HUB-$NAME --publishable --style=scss --simpleName --flat --prefix=feds-$HUB-$NAME  --directory=libs/feds-$HUB-libs/feds-$HUB-$NAME --importPath=@feds/$HUB-$NAME",
+    "g:library:dry": "nx g @nx/angular:library --name=feds-$HUB-$NAME --publishable --style=scss --simpleName --flat --prefix=feds-$HUB-$NAME  --directory=libs/feds-$HUB-libs/feds-$HUB-$NAME --importPath=@feds/$HUB-$NAME --dry-run",
+    "g:library:hub": "nx g @nx/angular:library --name=feds-$NAME --publishable --style=scss --simpleName --flat --prefix=feds-$NAME  --directory=libs/feds-$NAME --importPath=@feds/$NAME",
+    "g:library:hub:dry": "nx g @nx/angular:library --name=feds-$NAME --publishable --style=scss --simpleName --flat --prefix=feds-$NAME  --directory=libs/feds-$NAME --importPath=@feds/$NAME --dry-run",
+    "g:secondary:entry": "nx g @nx/angular:library-secondary-entry-point --skipModule=true --library=$PROJECT --name=$NAME",
+    "g:secondary:entry:dry": "nx g @nx/angular:library-secondary-entry-point --skipModule=true --library=$PROJECT --name=$NAME --dry-run"
   },
   "private": true,
   "dependencies": {
