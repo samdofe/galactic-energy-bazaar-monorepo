@@ -1,4 +1,4 @@
-export interface IFedsCoreAuthCredential {
+export interface IFedsCoreAuthCredentials {
   username: string;
   password: string;
 }
@@ -16,4 +16,10 @@ export interface IFedsCoreAuthMe {
   planetId: string,
   createdAt: string,
   updatedAt: string,
+}
+
+export interface IFedsCoreAuthState {
+  isLoading: boolean;
+  token: string | null;
+  user: IFedsCoreAuthMe | null;
 }
