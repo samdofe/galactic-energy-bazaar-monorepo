@@ -1,0 +1,13 @@
+.dashboard-container{
+  display: flex;
+  flex-direction: row;
+  &__left {
+    margin: 10px;
+    background-color: var(--mat-sys-background);
+    flex: 2;
+  }
+  &__right {
+    margin: 10px;
+    flex: 1;
+  }
+}

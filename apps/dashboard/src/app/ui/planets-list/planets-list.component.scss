@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+
+.planets-list-container{
+  @include mat.expansion-overrides((
+    container-background-color: transparent,
+    container-text-color: var(--mat-sys-primary),
+    header-text-color: var(--mat-sys-primary),
+  ));
+  &__body {
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      &__field {
+        flex: 0 0 30%;
+        word-wrap: break-word;
+      }
+    }
+  }
+}

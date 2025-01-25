@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { DashboardPageComponent } from '../pages/dashboard/dashboard.page';
 
 console.log('Dashboard :: entry-component : ', process.env.MODE);
 
 @Component({
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, DashboardPageComponent],
   selector: 'dashboard-entry',
   template: `
-    <dashboard-nx-welcome></dashboard-nx-welcome>
+    <dashboard-page></dashboard-page>
   `,
 })
 export class RemoteEntryComponent {}
