@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
     <div id="dashboard-welcome">
       <h1>
         <span> Hello there, </span>
-        Welcome dashboard 👋 and say Hi!!!!
+        Welcome dashboard 👋 and say Hi!!!! updated
       </h1>
     </div>
   `,

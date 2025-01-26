@@ -1,0 +1,29 @@
+<div class="leaderboard-list-container">
+  <div class="leaderboard-list-container__header" >
+    <mat-tab-group (selectedTabChange)="onTabChange($event.index)">
+      <mat-tab label="Planets"></mat-tab>
+      <mat-tab label="Traders"></mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="leaderboard-list-container__body">
+    @for (item of currentLeaderboard(); track idx; let idx=$index) {
+      <div class="leaderboard-list-container__body__card">
+        <mat-card appearance="outlined">
+          <mat-card-header class="card">
+            <div mat-card-avatar class="card-header-image"></div>
+            <div class="card__title">
+              <mat-card-title>{{ item.tradeCount }}</mat-card-title>
+              <div class="card__subtitle">
+                <mat-card-subtitle>{{idx + 1}}ª Place : </mat-card-subtitle>
+                <mat-card-subtitle>
+                  {{ item.name }}
+                </mat-card-subtitle>
+              </div>
+            </div>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    }
+  </div>
+
+</div>

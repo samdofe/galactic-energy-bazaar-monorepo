@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+
+.leaderboard-list-container{
+  @include mat.expansion-overrides((
+          container-background-color: transparent,
+          container-text-color: var(--mat-sys-primary),
+          header-text-color: var(--mat-sys-primary),
+  ));
+}
+
+.leaderboard-list-container__body {
+  margin-top: 20px;
+  &__card {
+    max-width: 400px;
+  }
+}
+
+.card {
+  column-gap: 5px;
+  &__subtitle {
+    display: flex;
+    column-gap: 10px;
+  }
+}
+
+.card-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.mat-tab-group {
+  margin-bottom: 48px;
+}
