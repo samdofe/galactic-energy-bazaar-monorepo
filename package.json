@@ -8,8 +8,9 @@
   },
   "scripts": {
     "serve:shell": "nx serve shell",
-    "serve:dashboard": "nx serve dashboard",
     "serve:login": "nx serve login",
+    "serve:dashboard": "nx serve dashboard",
+    "serve:trades": "nx serve trades",
     "build:shell": "nx build shell",
     "build:libs": "nx reset && nx run-many -t build -p feds-styles --verbose",
     "test:project": "nx run $PROJECT:test",

@@ -9,7 +9,12 @@ console.log('Trades :: entry-component : ', process.env.MODE);
 @Component({
   imports: [CommonModule, NxWelcomeComponent],
   selector: 'trades-entry',
-  template: `<trades-nx-welcome />`,
+  template: `
+    <section class="entry-container">
+      <trades-nx-welcome />
+    </section>
+  `,
+  styleUrl: './entry.component.scss',
 })
 export class RemoteEntryComponent {
   i18nTranslate = inject(FedsCoreI18nService);
