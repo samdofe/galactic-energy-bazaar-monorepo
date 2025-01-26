@@ -21,6 +21,6 @@ export default async (config, context) => {
         path: `.env.development`, // Path to your production .env file
         systemvars: true, // Load system environment variables
       }),
-    ],
+    ]
   })
 }

@@ -23,6 +23,11 @@
           }
         ],
         "styles": ["apps/login/src/styles.scss"],
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "apps/login/src/app"
+          ]
+        },
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/login/webpack.config.ts"
