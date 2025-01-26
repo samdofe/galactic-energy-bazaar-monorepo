@@ -298,6 +298,21 @@ importers:
         specifier: ^19.0.0
         version: 19.0.7(rxjs@7.8.1)(zone.js@0.15.0)
 
+  libs/feds-core-libs/feds-core-i18n:
+    dependencies:
+      '@angular/common':
+        specifier: ^19.0.0
+        version: 19.0.7(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.0.7(rxjs@7.8.1)(zone.js@0.15.0)
+      '@ngx-translate/core':
+        specifier: ^16.0.4
+        version: 16.0.4(@angular/common@19.0.7(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))
+      '@ngx-translate/http-loader':
+        specifier: ^16.0.1
+        version: 16.0.1(@angular/common@19.0.7(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))
+
   libs/feds-styles:
     dependencies:
       '@angular/animations':
