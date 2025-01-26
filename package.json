@@ -9,6 +9,7 @@
   "scripts": {
     "serve:shell": "nx serve shell",
     "serve:dashboard": "nx serve dashboard",
+    "serve:login": "nx serve login",
     "build:shell": "nx build shell",
     "build:libs": "nx reset && nx run-many -t build -p feds-styles --verbose",
     "test:project": "nx run $PROJECT:test",
@@ -32,6 +33,8 @@
     "@angular/platform-browser": "~19.0.0",
     "@angular/platform-browser-dynamic": "~19.0.0",
     "@angular/router": "~19.0.0",
+    "@ngrx/operators": "^19.0.0",
+    "@ngrx/signals": "^19.0.0",
     "@nx/angular": "20.3.2",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"

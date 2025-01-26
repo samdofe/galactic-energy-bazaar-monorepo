@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
-
-console.log('Login :: entry-component : ', process.env.MODE);
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, RouterOutlet],
   selector: 'app-login-entry',
-  template: `<app-nx-welcome></app-nx-welcome>`,
+  template: `<router-outlet></router-outlet>`,
 })
 export class RemoteEntryComponent {}
