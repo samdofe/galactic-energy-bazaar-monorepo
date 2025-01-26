@@ -1,0 +1,19 @@
+<!-- feds-cdk-rotating-img.component.html -->
+@defer (when imagesLoaded()) {
+  <div class="planet-container"
+       [style.width]="size()"
+       [style.height]="size()"
+       [style.box-shadow]="'5px -3px 10px 3px ' + shadowColor()"
+  >
+    @if(nightUrl()){
+      <div class="night" [style.background-image]="'url('+nightUrl()+')'"></div>
+    }
+    <div class="day" [style.background-image]="'url('+dayUrl()+')'"></div>
+    @if(cloudsUrl()){
+      <div class="clouds" [style.background-image]="'url('+cloudsUrl()+')'"></div>
+    }
+    <div class="inner-shadow"></div>
+  </div>
+} @placeholder {
+  <feds-cdk-rotating-img-skeleton [size]="size()"></feds-cdk-rotating-img-skeleton>
+}

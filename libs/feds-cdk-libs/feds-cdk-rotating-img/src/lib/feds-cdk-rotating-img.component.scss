@@ -1,0 +1,72 @@
+// rotating-planet.component.scss
+:host {
+  display: block;
+}
+
+.planet-container {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  .night {
+    animation: rotate-night 80s linear infinite;
+    background-size: 200%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .day {
+    animation: rotate-day 80s linear infinite;
+    background-size: 200%;
+    border-left: solid 1px black;
+    border-radius: 50%;
+    box-shadow: 5px 0 20px 10px #040615 inset;
+    height: 100%;
+    margin-left: 22%;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .clouds {
+    animation: rotate-day 50s linear infinite, spin-clouds 100s ease infinite;
+    background-size: 200%;
+    border-radius: 50%;
+    box-shadow: 5px 0 20px 10px #040615 inset, -9px 0px 20px 10px #5e90f1 inset;
+    height: 100%;
+    margin-left: 20%;
+    opacity: 0.45;
+    position: absolute;
+    width: 100%;
+    z-index: 4;
+  }
+
+  .inner-shadow {
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -5px 0 10px 1px #152b57 inset, 5px 0 10px 1px #040615 inset;
+    height: 100%;
+    margin-left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+@keyframes rotate-day {
+  0% { background-position: 120% 0; }
+  100% { background-position: -80% 0; }
+}
+
+@keyframes rotate-night {
+  0% { background-position: calc(120% + 24%) 0; }
+  100% { background-position: calc(-80% + 24%) 0; }
+}
+
+@keyframes spin-clouds {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg); }
+  100% { transform: rotate(0deg); }
+}

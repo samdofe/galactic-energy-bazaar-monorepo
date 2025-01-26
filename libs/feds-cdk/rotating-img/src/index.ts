@@ -1,0 +1,1 @@
+export * from '@feds/cdk-rotating-img';

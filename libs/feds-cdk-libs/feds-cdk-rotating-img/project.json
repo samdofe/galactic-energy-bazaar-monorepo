@@ -1,0 +1,42 @@
+{
+  "name": "feds-cdk-rotating-img",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feds-cdk-libs/feds-cdk-rotating-img/src",
+  "prefix": "feds-cdk-rotating-img",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/feds-cdk-libs/feds-cdk-rotating-img/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/feds-cdk-libs/feds-cdk-rotating-img/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/feds-cdk-libs/feds-cdk-rotating-img/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../../coverage/libs/feds-cdk-libs/feds-cdk-rotating-img"
+      },
+      "configurations": {
+        "ui": {
+          "ui": true,
+          "watch": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
