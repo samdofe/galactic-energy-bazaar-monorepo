@@ -1,0 +1,1 @@
+export * from '@feds/core-i18n';

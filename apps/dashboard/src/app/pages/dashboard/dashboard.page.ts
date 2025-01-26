@@ -1,17 +1,27 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import * as defaultLanguageJSON from '../../../../public/i18n/en-US.json';
 import { PlanetsListComponent } from '../../ui/planets-list/planets-list.component';
 import { LeaderboardListComponent } from '../../ui/leaderboard-list/leaderboard-list.component';
 import { IPlanetInfo} from '../../models/planets-list.model';
 import { ILeaderboard } from '../../models/leaderboard-list.model';
+import { TranslateModule } from '@ngx-translate/core';
+import { FedsCoreI18nService } from '@feds/core-i18n';
 
 @Component({
   selector: 'dashboard-page',
-  imports: [CommonModule, PlanetsListComponent, LeaderboardListComponent],
+  imports: [CommonModule, PlanetsListComponent, LeaderboardListComponent, TranslateModule],
   templateUrl: './dashboard.page.html',
   styleUrl: './dashboard.page.scss',
 })
 export class DashboardPageComponent {
+  i18nTranslate = inject(FedsCoreI18nService);
+  constructor() {
+    this.i18nTranslate.init({
+      nameSpace: 'dashboard',
+      defaultLangJSON: defaultLanguageJSON,
+    })
+  }
   planetsList = signal<IPlanetInfo[]>([
     {
       buyOrders: 45,

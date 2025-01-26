@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import * as defaultLanguageJSON from '../../../public/i18n/en-US.json';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { FedsCoreI18nService } from '@feds/core-i18n';
 
 console.log('Trades :: entry-component : ', process.env.MODE);
 
@@ -9,4 +11,12 @@ console.log('Trades :: entry-component : ', process.env.MODE);
   selector: 'trades-entry',
   template: `<trades-nx-welcome />`,
 })
-export class RemoteEntryComponent {}
+export class RemoteEntryComponent {
+  i18nTranslate = inject(FedsCoreI18nService);
+  constructor() {
+    this.i18nTranslate.init({
+      nameSpace: 'trades',
+      defaultLangJSON: defaultLanguageJSON,
+    })
+  }
+}

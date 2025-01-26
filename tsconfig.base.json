@@ -8,6 +8,7 @@
     "typeRoots": ["./", "node_modules/@types"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
@@ -22,8 +23,10 @@
       "@feds/cdk/*": ["libs/feds-cdk/src/*"],
       "@feds/cdk/side-nav": ["libs/feds-cdk/side-nav/src/index.ts"],
       "@feds/core-auth": ["libs/feds-core-libs/feds-core-auth/src/index.ts"],
+      "@feds/core-i18n": ["libs/feds-core-libs/feds-core-i18n/src/index.ts"],
       "@feds/core/*": ["libs/feds-core/src/*"],
       "@feds/core/auth": ["libs/feds-core/auth/src/index.ts"],
+      "@feds/core/i18n": ["libs/feds-core/i18n/src/index.ts"],
       "@feds/styles": ["libs/feds-styles/src/index.ts"],
       "dashboard/Routes": [
         "apps/dashboard/src/app/remote-entry/entry.routes.ts"
