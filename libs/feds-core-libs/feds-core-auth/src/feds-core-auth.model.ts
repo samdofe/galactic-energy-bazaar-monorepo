@@ -19,7 +19,7 @@ export interface IFedsCoreAuthMe {
 }
 
 export interface IFedsCoreAuthState {
-  isLoading: boolean;
   token: string | null;
-  me: IFedsCoreAuthMe | null;
+  isLoading: boolean;
+  me: any | null;
 }
