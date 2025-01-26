@@ -21,7 +21,7 @@
   }
 
   .planet-stats, .leaderboard {
-    background: variables.$layout-background;
+    background: variables.$layout-background-transparent;
     border-radius: 8px;
     backdrop-filter: blur(10px);
     border: variables.$layout-border;
