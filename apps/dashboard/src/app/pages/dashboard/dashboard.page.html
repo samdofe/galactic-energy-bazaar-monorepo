@@ -1,8 +1,10 @@
-<div id="dashboard-page" class="dashboard-container">
-  <div class="dashboard-container__left">
-    <dashboard-planets-list [dataPlanet]="planetsList()"/>
-  </div>
-  <div class="dashboard-container__right">
-    <dashboard-leaderboard-list [dataLeaderboard]="leaderboardList()"></dashboard-leaderboard-list>
+<div class="dashboard-container">
+  <div class="dashboard-content">
+    <div class="planet-stats">
+      <dashboard-planets-list [dataPlanet]="planetsList()"/>
+    </div>
+    <div class="leaderboard">
+      <dashboard-leaderboard-list [dataLeaderboard]="leaderboardList()"></dashboard-leaderboard-list>
+    </div>
   </div>
 </div>

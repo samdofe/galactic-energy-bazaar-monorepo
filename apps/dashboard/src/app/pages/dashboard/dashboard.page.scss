@@ -1,13 +1,30 @@
-.dashboard-container{
-  display: flex;
-  flex-direction: row;
-  &__left {
-    margin: 10px;
-    background-color: var(--mat-sys-background);
-    flex: 2;
+@use 'libs/feds-styles/src/assets/styles/variables' as variables;
+
+.dashboard-container {
+  min-height: 100vh;
+  padding: 20px;
+  /*  background-image: linear-gradient(rgba(0, 21, 41, 0.9), rgba(0, 21, 41, 0.9)),
+    url('path-to-your-circuit-pattern.png');*/
+  background-size: cover;
+  background-position: center;
+
+  .dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
-  &__right {
-    margin: 10px;
-    flex: 1;
+
+  .planet-stats, .leaderboard {
+    background: variables.$layout-background;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: variables.$layout-border;
+    padding: 20px;
   }
 }

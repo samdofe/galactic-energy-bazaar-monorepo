@@ -3,7 +3,6 @@
 body {
   margin: 0;
   height: 100vh; /* Ensures the background covers the viewport */
-  color: var(--mat-sys-primary);
   background-image: url('../public/images/background-v5.png'); /* Path to the image */
   background-size: cover; /* Ensures the image covers the entire screen */
   background-position: center; /* Centers the image */
