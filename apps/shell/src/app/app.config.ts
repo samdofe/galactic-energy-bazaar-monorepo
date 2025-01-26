@@ -3,13 +3,13 @@ import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { fedsCoreAuthInterceptor } from '@feds/core/auth';
-import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
-    provideNoopAnimations(),
+    provideAnimations(),
     provideHttpClient(withInterceptors([fedsCoreAuthInterceptor])),
   ],
 };
