@@ -20,6 +20,7 @@ export default defineConfig({
     setupFiles: ['src/test-setup.ts'],
     reporters: ['default'],
     coverage: {
+      enabled: true,
       reportsDirectory: '../../../coverage/libs/feds-core-libs/feds-core-auth',
       provider: 'v8',
     },

@@ -6,7 +6,7 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../../node_modules/.vite/libs/feds-cdk-libs/feds-cdk-side-nav',
+  cacheDir: '../../../node_modules/.vite/libs/feds-core-libs/feds-core-i18n',
   plugins: [angular(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   // Uncomment this if you are using workers.
   // worker: {
@@ -21,8 +21,7 @@ export default defineConfig({
     reporters: ['default'],
     coverage: {
       enabled: true,
-      reportsDirectory:
-        '../../../coverage/libs/feds-cdk-libs/feds-cdk-side-nav',
+      reportsDirectory: '../../../coverage/libs/feds-core-libs/feds-core-i18n',
       provider: 'v8',
     },
   },

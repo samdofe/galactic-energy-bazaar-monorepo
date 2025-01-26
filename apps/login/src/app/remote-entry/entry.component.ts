@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   imports: [CommonModule, RouterOutlet],
-  selector: 'app-login-entry',
+  selector: 'login-entry',
   template: `<router-outlet></router-outlet>`,
 })
 export class RemoteEntryComponent {}

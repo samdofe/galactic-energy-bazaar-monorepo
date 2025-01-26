@@ -2,12 +2,15 @@ import { Component, effect, inject, type OnInit, signal } from '@angular/core';
 import { CommonModule } from "@angular/common"
 import { ActivatedRoute, Router, RouterLink } from "@angular/router"
 import { FormBuilder, type FormGroup, ReactiveFormsModule, Validators } from "@angular/forms"
-import { FedsCoreAuthStore } from "@feds/core/auth"
 import { toSignal } from "@angular/core/rxjs-interop"
+import { TranslateModule } from '@ngx-translate/core';
+import { FedsCoreAuthStore } from "@feds/core/auth"
+import { FedsCoreI18nService } from '@feds/core-i18n';
+import * as defaultLanguageJSON from '../../../../public/i18n/en-US.json';
 
 @Component({
   selector: "login-page",
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink, TranslateModule],
   templateUrl: "./login.page.html",
   styleUrl: "./login.page.scss",
 })
@@ -18,8 +21,13 @@ export class LoginPageComponent implements OnInit {
   private route = inject(ActivatedRoute);
   redirectUrl = signal("/dashboard");
   queryParams = toSignal(this.route.queryParams);
+  i18nTranslate = inject(FedsCoreI18nService);
 
   constructor() {
+    this.i18nTranslate.init({
+      nameSpace: 'login',
+      defaultLangJSON: defaultLanguageJSON,
+    });
     // Observe token changes using an effect
     effect(() => {
       const token = this.authStore.token;
