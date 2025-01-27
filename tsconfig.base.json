@@ -34,6 +34,7 @@
       "@feds/core/env": ["libs/feds-core/env/src/index.ts"],
       "@feds/core/i18n": ["libs/feds-core/i18n/src/index.ts"],
       "@feds/styles": ["libs/feds-styles/src/index.ts"],
+      "@stores/planets": ["libs/stores/planets/src/index.ts"],
       "dashboard/Routes": [
         "apps/dashboard/src/app/remote-entry/entry.routes.ts"
       ],

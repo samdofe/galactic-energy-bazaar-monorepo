@@ -2,3 +2,4 @@ packages:
   - 'libs/*'
   - 'libs/feds-cdk-libs/*'
   - 'libs/feds-core-libs/*'
+  - 'libs/stores/*'
