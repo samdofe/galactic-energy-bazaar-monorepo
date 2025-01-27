@@ -26,6 +26,7 @@ export class LoginPageComponent implements OnInit {
   constructor() {
     this.i18nTranslate.init({
       nameSpace: 'login',
+      useLang: 'AETH',
       defaultLangJSON: defaultLanguageJSON,
     });
     // Observe token changes using an effect

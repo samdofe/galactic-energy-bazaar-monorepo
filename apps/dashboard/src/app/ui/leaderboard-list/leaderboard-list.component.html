@@ -1,6 +1,6 @@
 <div class="leaderboard-list-container">
   <mat-tab-group [selectedIndex]="selectedTab()" (selectedTabChange)="onTabChange($event.index)">
-    <mat-tab [label]="'LEADERBOARD.PLANETS' | translate">
+    <mat-tab [label]="'DASHBOARD_APP.LEADERBOARD.PLANETS' | translate">
       <ng-container *ngIf="dataLeaderboard().planetLeaderboard">
         <mat-card *ngFor="let planet of dataLeaderboard().planetLeaderboard; let i = index" class="leaderboard-card">
           <div class="leaderboard-entry">
@@ -21,7 +21,7 @@
         </mat-card>
       </ng-container>
     </mat-tab>
-    <mat-tab [label]="'LEADERBOARD.TRADERS' | translate">
+    <mat-tab [label]="'DASHBOARD_APP.LEADERBOARD.TRADERS' | translate">
       <ng-container *ngIf="dataLeaderboard()?.traderLeaderboard">
         <mat-card *ngFor="let trader of dataLeaderboard().traderLeaderboard; let i = index" class="leaderboard-card">
           <div class="leaderboard-entry">

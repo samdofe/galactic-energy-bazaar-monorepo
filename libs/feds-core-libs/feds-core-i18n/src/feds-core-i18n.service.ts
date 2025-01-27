@@ -50,12 +50,14 @@ export class FedsCoreI18nService {
     const mappedDefaultLang = this.getMappedLang(nameSpace, defaultLang);
     this.translate.addLangs(mappedLangs);
     this.translate.setDefaultLang(mappedDefaultLang);
+    //this.translate.setTranslation(mappedDefaultLang, defaultLangJSON);
     // Try to load translations from the backend
     this.translate.use(mappedUseLang).pipe(
       catchError(() => {
         // If it fails, load default translations
         console.error('Translation service failed. Loading default translations.');
-        this.translate.setTranslation(mappedUseLang, defaultLangJSON, true);
+        this.translate.setTranslation(mappedDefaultLang, defaultLangJSON, true);
+        this.translate.use(mappedDefaultLang);
         return of(null);
       })
     ).subscribe();
