@@ -1,0 +1,42 @@
+{
+  "name": "stores-planets",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/stores/planets/src",
+  "prefix": "planets",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/stores/planets/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/stores/planets/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/stores/planets/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../../coverage/libs/stores/planets"
+      },
+      "configurations": {
+        "ui": {
+          "ui": true,
+          "watch": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
