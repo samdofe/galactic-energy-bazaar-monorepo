@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { IPlanetInfo } from '../../models/planets-list.model';
 import { CurrencySymbolsPipe } from '../../pipes/currency-symbols.pipe';
+import { FedsCdkRotatingImgComponent } from '@feds/cdk/rotating-img';
 
 @Component({
   selector: 'dashboard-planets-list',
-  standalone: true,
-  imports: [CommonModule, MatExpansionModule, CurrencySymbolsPipe],
+  imports: [CommonModule, MatExpansionModule, CurrencySymbolsPipe, FedsCdkRotatingImgComponent],
   templateUrl: './planets-list.component.html',
   styleUrl: './planets-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

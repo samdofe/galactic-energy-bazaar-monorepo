@@ -1,6 +1,6 @@
 <!-- feds-cdk-rotating-img.component.html -->
 @defer (when imagesLoaded()) {
-  <div class="planet-container"
+  <div class="rotating-img-container"
        [style.width]="size()"
        [style.height]="size()"
        [style.box-shadow]="'5px -3px 10px 3px ' + shadowColor()"
@@ -12,7 +12,6 @@
     @if(cloudsUrl()){
       <div class="clouds" [style.background-image]="'url('+cloudsUrl()+')'"></div>
     }
-    <div class="inner-shadow"></div>
   </div>
 } @placeholder {
   <feds-cdk-rotating-img-skeleton [size]="size()"></feds-cdk-rotating-img-skeleton>

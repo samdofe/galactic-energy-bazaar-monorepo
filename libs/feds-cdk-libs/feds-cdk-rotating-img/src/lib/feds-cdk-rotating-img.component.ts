@@ -9,15 +9,14 @@ import { FedsCdkRotatingImgSkeletonComponent } from './feds-cdk-rotating-img-ske
   imports: [CommonModule, FedsCdkRotatingImgSkeletonComponent],
   templateUrl: './feds-cdk-rotating-img.component.html',
   styleUrls: ['./feds-cdk-rotating-img.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FedsCdkRotatingImgComponent {
   dayUrl = input.required<string>();
-  nightUrl = input<string>('https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg');
-  cloudsUrl = input<string>();
-  size = input.required<string>();
-  shadowColor = input<string>('#5e90f1'); // New input for shadow color with default value
+  nightUrl = input<string | undefined>('https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg');
+  cloudsUrl = input<string | undefined>();
+  size = input<string>('80px');
+  shadowColor = input<string | undefined>('#5e90f1'); // New input for shadow color with default value
 
   private _imagesLoaded = signal(false);
   imagesLoaded: Signal<boolean> = this._imagesLoaded.asReadonly();

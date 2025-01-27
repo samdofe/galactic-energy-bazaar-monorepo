@@ -3,7 +3,8 @@ import {
   Component,
   input,
   OnInit,
-  signal,
+  Input,
+  signal, effect
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,28 +14,23 @@ import {
   ILeaderboard,
   ILeaderEntity,
 } from '../../models/leaderboard-list.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'dashboard-leaderboard-list',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatTabsModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, MatTabsModule, TranslateModule],
   templateUrl: './leaderboard-list.component.html',
   styleUrl: './leaderboard-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LeaderboardListComponent implements OnInit {
+export class LeaderboardListComponent{
   dataLeaderboard = input.required<ILeaderboard>();
-  currentLeaderboard = signal<ILeaderEntity[]>([]);
-
-  ngOnInit() {
-    this.currentLeaderboard.set(this.dataLeaderboard().planetLeaderboard);
-  }
+  selectedTab =  signal<number>(0);
 
   onTabChange(index: number) {
-    this.currentLeaderboard.set(
-      index === 0
-        ? this.dataLeaderboard().planetLeaderboard
-        : this.dataLeaderboard().traderLeaderboard
-    );
+    effect(() => {
+      this.selectedTab.set(index);
+    });
   }
 }

@@ -1,19 +1,61 @@
 @use '@angular/material' as mat;
 
-.planets-list-container{
+.planets-list-container {
   @include mat.expansion-overrides((
-    container-background-color: transparent,
-    container-text-color: var(--mat-sys-primary),
-    header-text-color: var(--mat-sys-primary),
+          container-background-color: transparent,
+          container-text-color: var(--mat-sys-primary),
+          header-text-color: var(--mat-sys-primary),
   ));
+
+  & mat-expansion-panel-header {
+    height: auto;
+    align-items: center;
+   & feds-cdk-rotating-img{
+      padding: 15px 0 10px 0;
+    }
+  }
+
+  .mat-expansion-panel-header-title,
+  .mat-expansion-panel-header-description {
+    align-items: center;
+    margin: 0;
+  }
+
+  .mat-expansion-panel-header-title {
+    flex: 0 0 80px; // Adjust this value to accommodate the 70px image plus some padding
+  }
+
+  .mat-expansion-panel-header-description {
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+
+    span {
+      flex: 1;
+      text-align: center;
+      padding: 0 8px;
+    }
+  }
+
   &__body {
     &__row {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 20px;
       &__field {
         flex: 0 0 30%;
         word-wrap: break-word;
+
+        p:first-child {
+          font-weight: bold;
+          margin-bottom: 4px;
+        }
+
+        ul {
+          padding-left: 20px;
+          margin: 0;
+        }
       }
     }
   }

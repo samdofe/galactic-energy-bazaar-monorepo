@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardPageComponent } from '../pages/dashboard/dashboard.page';
 
-const { MODE } = process.env;
-
 console.log('Dashboard :: entry-component : ', process.env['MODE']);
 
 @Component({

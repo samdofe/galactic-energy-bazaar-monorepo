@@ -1,4 +1,46 @@
 <div class="leaderboard-list-container">
+  <mat-tab-group [selectedIndex]="selectedTab()" (selectedTabChange)="onTabChange($event.index)">
+    <mat-tab [label]="'LEADERBOARD.PLANETS' | translate">
+      <ng-container *ngIf="dataLeaderboard().planetLeaderboard">
+        <mat-card *ngFor="let planet of dataLeaderboard().planetLeaderboard; let i = index" class="leaderboard-card">
+          <div class="leaderboard-entry">
+            <div class="rank">{{i + 1}}</div>
+            <div class="avatar">
+              <img [src]="'https://material.angular.io/assets/img/examples/shiba1.jpg'" [alt]="planet.name">
+            </div>
+            <div class="info">
+              <div class="trade-count">{{ planet.tradeCount }}</div>
+              <div class="name">{{ planet.name }}</div>
+            </div>
+          </div>
+        </mat-card>
+      </ng-container>
+    </mat-tab>
+    <mat-tab [label]="'LEADERBOARD.TRADERS' | translate">
+      <ng-container *ngIf="dataLeaderboard()?.traderLeaderboard">
+        <mat-card *ngFor="let trader of dataLeaderboard().traderLeaderboard; let i = index" class="leaderboard-card">
+          <div class="leaderboard-entry">
+            <div class="rank">{{i + 1}}</div>
+            <div class="avatar">
+              <img [src]="'https://material.angular.io/assets/img/examples/shiba1.jpg'" [alt]="trader.name">
+            </div>
+            <div class="info">
+              <div class="trade-count">{{ trader.tradeCount }}</div>
+              <div class="name">{{ trader.name }}</div>
+            </div>
+          </div>
+        </mat-card>
+      </ng-container>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+
+
+
+
+<!--
+<div class="leaderboard-list-container">
   <div class="leaderboard-list-container__header" >
     <mat-tab-group (selectedTabChange)="onTabChange($event.index)">
       <mat-tab label="Planets"></mat-tab>
@@ -10,20 +52,20 @@
       <div class="leaderboard-list-container__body__card">
         <mat-card appearance="outlined">
           <mat-card-header class="card">
-            <div mat-card-avatar class="card-header-image"></div>
-            <div class="card__title">
-              <mat-card-title>{{ item.tradeCount }}</mat-card-title>
-              <div class="card__subtitle">
-                <mat-card-subtitle>{{idx + 1}}ª Place : </mat-card-subtitle>
-                <mat-card-subtitle>
-                  {{ item.name }}
-                </mat-card-subtitle>
-              </div>
-            </div>
+            <mat-card-title-group>
+              <mat-card-title>{{idx + 1}}</mat-card-title>
+            </mat-card-title-group>
+            <mat-card-title-group>
+              <mat-card-subtitle>
+                <div mat-card-avatar class="card-header-image"></div>
+              </mat-card-subtitle>
+              <mat-card-subtitle>{{ item.tradeCount }}</mat-card-subtitle>
+              <mat-card-subtitle> {{ item.name }}</mat-card-subtitle>
+            </mat-card-title-group>
           </mat-card-header>
         </mat-card>
       </div>
     }
   </div>
 
-</div>
+</div>-->

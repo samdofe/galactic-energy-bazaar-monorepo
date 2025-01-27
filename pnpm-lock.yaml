@@ -258,9 +258,6 @@ importers:
       '@angular/material':
         specifier: ~19.1.1
         version: 19.1.1(xxgoxg5z36dhmmia6ige5ta4ga)
-      '@feds/cdk-side-nav':
-        specifier: workspace:0.0.1
-        version: link:../feds-cdk-libs/feds-cdk-side-nav
 
   libs/feds-cdk-libs/feds-cdk-rotating-img:
     dependencies:
@@ -288,6 +285,9 @@ importers:
       '@angular/material':
         specifier: ~19.1.1
         version: 19.1.1(xxgoxg5z36dhmmia6ige5ta4ga)
+      '@feds/styles':
+        specifier: workspace:0.0.1
+        version: link:../../feds-styles
 
   libs/feds-core:
     dependencies:

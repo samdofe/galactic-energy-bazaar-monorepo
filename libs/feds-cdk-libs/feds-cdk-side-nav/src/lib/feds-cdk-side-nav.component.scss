@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-@use 'libs/feds-styles/src/assets/styles/variables' as variables;
+@use 'libs/feds-styles/src/assets/styles/_variables.scss' as variables;
 
 :host {
   display: block;

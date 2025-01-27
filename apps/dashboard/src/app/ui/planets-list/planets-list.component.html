@@ -3,7 +3,16 @@
     @for (planet of dataPlanet(); track planet.planetId; let idx = $index) {
       <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
         <mat-expansion-panel-header>
-          <mat-panel-title> {{ planet.planetId }} </mat-panel-title>
+          <mat-panel-description>
+            <feds-cdk-rotating-img
+             [dayUrl]="planet.images.dayUrl"
+             [nightUrl]="planet.images.nightUrl"
+             [cloudsUrl]="planet.images.cloudsUrl"
+             [size]="'70px'"
+             [shadowColor]="planet.color"
+            />
+          </mat-panel-description>
+          <mat-panel-description> {{ planet.name }} </mat-panel-description>
           <mat-panel-description>
             {{ planet.buyOrders | number }}
           </mat-panel-description>
