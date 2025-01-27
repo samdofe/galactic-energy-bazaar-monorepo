@@ -6,7 +6,7 @@ import { IFedsCoreAuthCredentials, IFedsCoreAuthMe, IFedsCoreAuthToken } from '.
 @Injectable({
   providedIn: 'root',
 })
-export class fedsCoreAuthService {
+export class FedsCoreAuthService {
   readonly #http = inject(HttpClient);
   private readonly apiBase =  `${process.env['API_AUTH_DOMAIN']}${process.env['API_AUTH_CONTEXT']}`;
 

@@ -1,10 +1,10 @@
 import { inject } from "@angular/core"
-import { mergeMap, pipe, switchMap, tap } from "rxjs"
+import { pipe, switchMap, tap } from "rxjs"
 import { patchState, signalStore, withMethods, withState } from "@ngrx/signals"
 import { rxMethod } from "@ngrx/signals/rxjs-interop"
 import { tapResponse } from "@ngrx/operators"
 import type { IFedsCoreAuthCredentials, IFedsCoreAuthState } from "./feds-core-auth.model"
-import { fedsCoreAuthService } from "./feds-core-auth.service"
+import { FedsCoreAuthService } from "./feds-core-auth.service"
 
 const initialState: IFedsCoreAuthState = {
   token: null,
@@ -15,7 +15,7 @@ const initialState: IFedsCoreAuthState = {
 export const FedsCoreAuthStore = signalStore(
   { providedIn: "root" },
   withState(initialState),
-  withMethods((store, authService = inject(fedsCoreAuthService)) => {
+  withMethods((store, authService = inject(FedsCoreAuthService)) => {
     const updateToken = (newToken: string) => {
       patchState(store, { token: newToken })
     }

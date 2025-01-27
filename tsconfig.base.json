@@ -17,19 +17,21 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@feds/cdk": ["libs/feds-cdk/src/index.ts"],
       "@feds/cdk-rotating-img": [
         "libs/feds-cdk-libs/feds-cdk-rotating-img/src/index.ts"
       ],
       "@feds/cdk-side-nav": [
         "libs/feds-cdk-libs/feds-cdk-side-nav/src/index.ts"
       ],
-      "@feds/cdk": ["libs/feds-cdk/src/index.ts"],
       "@feds/cdk/rotating-img": ["libs/feds-cdk/rotating-img/src/index.ts"],
       "@feds/cdk/side-nav": ["libs/feds-cdk/side-nav/src/index.ts"],
-      "@feds/core-auth": ["libs/feds-core-libs/feds-core-auth/src/index.ts"],
-      "@feds/core-i18n": ["libs/feds-core-libs/feds-core-i18n/src/index.ts"],
       "@feds/core": ["libs/feds-core/src/index.ts"],
+      "@feds/core-auth": ["libs/feds-core-libs/feds-core-auth/src/index.ts"],
+      "@feds/core-env": ["libs/feds-core-libs/feds-core-env/src/index.ts"],
+      "@feds/core-i18n": ["libs/feds-core-libs/feds-core-i18n/src/index.ts"],
       "@feds/core/auth": ["libs/feds-core/auth/src/index.ts"],
+      "@feds/core/env": ["libs/feds-core/env/src/index.ts"],
       "@feds/core/i18n": ["libs/feds-core/i18n/src/index.ts"],
       "@feds/styles": ["libs/feds-styles/src/index.ts"],
       "dashboard/Routes": [

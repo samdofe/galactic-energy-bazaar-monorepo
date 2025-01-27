@@ -5,8 +5,10 @@ import { FormBuilder, type FormGroup, ReactiveFormsModule, Validators } from "@a
 import { toSignal } from "@angular/core/rxjs-interop"
 import { TranslateModule } from '@ngx-translate/core';
 import { FedsCoreAuthStore } from "@feds/core/auth"
+import { FedsCoreEnvSyncService } from '@feds/core/env';
 import { FedsCoreI18nService } from '@feds/core-i18n';
 import * as defaultLanguageJSON from '../../../../public/i18n/en-US.json';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: "login-page",
@@ -17,6 +19,8 @@ import * as defaultLanguageJSON from '../../../../public/i18n/en-US.json';
 export class LoginPageComponent implements OnInit {
   private fb = inject(FormBuilder);
   protected authStore = inject(FedsCoreAuthStore);
+  envSrv = inject(FedsCoreEnvSyncService);
+  environment = this.envSrv.environment();
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   redirectUrl = signal("/dashboard");
@@ -24,6 +28,8 @@ export class LoginPageComponent implements OnInit {
   i18nTranslate = inject(FedsCoreI18nService);
 
   constructor() {
+    this.envSrv.setEnvironment(environment);
+    console.log('LOGIN :: environment : ', this.environment());
     this.i18nTranslate.init({
       nameSpace: 'login',
       useLang: 'AETH',

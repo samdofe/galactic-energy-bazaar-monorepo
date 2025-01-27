@@ -1,12 +1,14 @@
 import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { FedsCoreI18nService } from '@feds/core-i18n';
+import { FedsCoreEnvSyncService } from '@feds/core/env';
+import {environment} from '../../../environments/environment';
 import * as defaultLanguageJSON from '../../../../public/i18n/en-US.json';
 import { PlanetsListComponent } from '../../ui/planets-list/planets-list.component';
 import { LeaderboardListComponent } from '../../ui/leaderboard-list/leaderboard-list.component';
 import { IPlanetInfo } from '../../models/planet.model';
 import { ILeaderboard } from '../../models/leaderboard.model';
-import { TranslateModule } from '@ngx-translate/core';
-import { FedsCoreI18nService } from '@feds/core-i18n';
 
 @Component({
   selector: 'dashboard-page',
@@ -21,7 +23,11 @@ import { FedsCoreI18nService } from '@feds/core-i18n';
 })
 export class DashboardPageComponent {
   i18nTranslate = inject(FedsCoreI18nService);
+  envSrv = inject(FedsCoreEnvSyncService);
+  environment = this.envSrv.environment();
   constructor() {
+    this.envSrv.setEnvironment(environment);
+    console.log('DASHBOARD :: environment : ', this.environment());
     this.i18nTranslate.init({
       nameSpace: 'dashboard',
       defaultLangJSON: defaultLanguageJSON,
