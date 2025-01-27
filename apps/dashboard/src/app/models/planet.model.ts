@@ -1,8 +1,4 @@
-export interface IImages {
-  dayUrl: string;
-  nightUrl?: string;
-  cloudsUrl?: string;
-}
+import { IImage } from './image.model';
 
 export interface IPlanetInfo {
   buyOrders: number,
@@ -14,12 +10,12 @@ export interface IPlanetInfo {
   description: string,
   language: string,
   currency: string,
-  images: IImages,
+  images: IImage,
   color: string,
   tradeVolume: number,
   riskFactors: string[],
   averageDailyConsumption: number,
   creditRating: string,
-  createdAt: Date,
-  updatedAt: Date
+  createdAt: string,
+  updatedAt: string
 }

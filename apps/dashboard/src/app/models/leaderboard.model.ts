@@ -1,3 +1,5 @@
+import { IImage } from './image.model';
+
 export interface ILeaderboard {
   planetLeaderboard : ILeaderEntity[],
   traderLeaderboard : ILeaderEntity[]
@@ -6,5 +8,6 @@ export interface ILeaderboard {
 export interface ILeaderEntity {
   tradeCount: number,
   id: string,
-  name: string
+  name: string,
+  images: IImage
 }

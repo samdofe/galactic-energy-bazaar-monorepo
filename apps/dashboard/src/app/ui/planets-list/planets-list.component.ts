@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { IPlanetInfo } from '../../models/planets-list.model';
+import { IPlanetInfo } from '../../models/planet.model';
 import { CurrencySymbolsPipe } from '../../pipes/currency-symbols.pipe';
 import { FedsCdkRotatingImgComponent } from '@feds/cdk/rotating-img';
 

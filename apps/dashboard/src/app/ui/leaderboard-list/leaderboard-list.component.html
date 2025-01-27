@@ -6,7 +6,12 @@
           <div class="leaderboard-entry">
             <div class="rank">{{i + 1}}</div>
             <div class="avatar">
-              <img [src]="'https://material.angular.io/assets/img/examples/shiba1.jpg'" [alt]="planet.name">
+              <feds-cdk-rotating-img
+                [dayUrl]="planet.images.base"
+                [nightUrl]="planet.images.second"
+                [cloudsUrl]="planet.images.third"
+                [size]="'50px'"
+              />
             </div>
             <div class="info">
               <div class="trade-count">{{ planet.tradeCount }}</div>
@@ -22,7 +27,7 @@
           <div class="leaderboard-entry">
             <div class="rank">{{i + 1}}</div>
             <div class="avatar">
-              <img [src]="'https://material.angular.io/assets/img/examples/shiba1.jpg'" [alt]="trader.name">
+              <img [src]="trader.images.base" [alt]="trader.name">
             </div>
             <div class="info">
               <div class="trade-count">{{ trader.tradeCount }}</div>

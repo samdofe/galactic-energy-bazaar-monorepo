@@ -42,12 +42,15 @@ label {
 
 input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.75rem 0;
   background: rgba(42, 159, 255, 0.1);
   border: 1px solid #2a9fff;
   border-radius: 4px;
   color: #fff;
   transition: all 0.3s ease;
+  &::placeholder {
+    padding-left: 12px;
+  }
 
   &:focus {
     outline: none;
