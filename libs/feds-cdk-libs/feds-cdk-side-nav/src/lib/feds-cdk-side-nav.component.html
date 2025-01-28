@@ -46,6 +46,14 @@
         <mat-icon>menu</mat-icon>
       </button>
       <span class="page-title">{{pageTitle()}}</span>
+      <button
+        type="button"
+        aria-label="logout button"
+        mat-icon-button
+        (click)="logout()"
+      >
+        <mat-icon>logout</mat-icon>
+      </button>
     </mat-toolbar>
     <div class="sidenav__content">
       <ng-content></ng-content>

@@ -28,12 +28,10 @@ export class ShellEntryComponent {
         routeLink: 'trades',
         icon: 'trending_up',
         label: 'Trade',
-      },
-      {
-        routeLink: 'login',
-        icon: 'login',
-        label: 'Login',
       }
     ]
   });
+  labels = signal({
+    logout: 'Logout',
+  })
 }

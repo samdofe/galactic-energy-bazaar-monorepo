@@ -51,11 +51,25 @@
     }
   }
   .content-container {
-/*    mat-toolbar {
-      position: fixed;
-      z-index: 1000;
-      background-image: linear-gradient(to right, #02243e , #040615);
-    }*/
+    mat-toolbar {
+      display: flex; /* Enable flexbox */
+      align-items: center; /* Vertically center content */
+      justify-content: space-between; /* Push items to the edges */
+
+      button {
+        margin-right: auto; /* Ensure the toggle button stays on the left */
+      }
+
+      .page-title {
+        margin: 0 auto; /* Center the title */
+      }
+
+      button:last-child {
+        margin-left: auto; /* Push the logout icon to the far right */
+        margin-right: 60px;
+        cursor: pointer; /* Optional: add a pointer cursor for interaction */
+      }
+    }
     .page-title {
       text-shadow: variables.$text-shadow;
       font-weight: bold;
@@ -63,8 +77,6 @@
     }
   }
   &__content {
-/*    position: relative;
-    top: 32px;*/
     padding: 20px;
     min-height: calc(100vh - 64px);
   }
