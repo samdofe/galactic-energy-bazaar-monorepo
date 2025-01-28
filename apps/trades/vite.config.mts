@@ -24,10 +24,6 @@ export default defineConfig({
       enabled: true,
       exclude: [
         ...configDefaults.exclude,
-        'src/main.ts',
-        'src/bootstrap.ts',
-        '**/*.d.ts',
-        '**/*.mocks.ts'
       ],
       reportsDirectory: '../../coverage/apps/trades',
       provider: 'v8',

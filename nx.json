@@ -53,6 +53,11 @@
           "watch": true,
           "ci": true,
           "codeCoverage": true
+        },
+        "ui": {
+          "ui": true,
+          "watch": true,
+          "codeCoverage": true
         }
       }
     },

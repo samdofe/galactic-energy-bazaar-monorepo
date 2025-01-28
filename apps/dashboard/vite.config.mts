@@ -10,9 +10,9 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/apps/dashboard',
   plugins: [angular(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
+/*  worker: {
+   plugins: [ nxViteTsPaths() ],
+  },*/
   test: {
     watch: false,
     globals: true,
