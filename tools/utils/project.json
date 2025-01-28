@@ -1,0 +1,36 @@
+{
+  "name": "@tools/utils",
+  "targets": {
+    "build-libs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          { "command": "nx reset" },
+          { "command": "nx run-many -t build -p feds-cdk feds-core feds-styles planets socket-io trades" }
+        ],
+        "parallel": false
+      }
+    },
+    "test-all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          { "command": "nx run dashboard:test:ui" },
+          { "command": "nx run login:test:ui" },
+          { "command": "nx run shell:test:ui" },
+          { "command": "nx run trades:test:ui" },
+          { "command": "nx run feds-cdk-rotating-img:test:ui" },
+          { "command": "nx run feds-cdk-side-nav:test:ui" },
+          { "command": "nx run feds-core-auth:test:ui" },
+          { "command": "nx run feds-core-env:test:ui" },
+          { "command": "nx run feds-core-i18n:test:ui" },
+          { "command": "nx run feds-styles:test:ui" },
+          { "command": "nx run planets:test:ui" },
+          { "command": "nx run socket-io:test:ui" },
+          { "command": "nx run trades:test:ui" }
+        ],
+        "parallel": false
+      }
+    }
+  }
+}

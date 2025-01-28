@@ -23,11 +23,7 @@ export default defineConfig({
     coverage: {
       enabled: true,
       exclude: [
-        ...configDefaults.exclude,
-        'src/main.ts',
-        'src/bootstrap.ts',
-        '**/*.d.ts',
-        '**/*.mocks.ts'
+        ...configDefaults.exclude
       ],
       reportsDirectory: '../../coverage/apps/dashboard/',
       provider: 'v8',
