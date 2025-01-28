@@ -1,0 +1,10 @@
+{
+  "name": "@stores/socket-io",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "socket.io-client": "^4.8.1"
+  },
+  "sideEffects": false
+}

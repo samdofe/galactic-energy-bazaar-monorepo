@@ -35,12 +35,14 @@
       "@feds/core/i18n": ["libs/feds-core/i18n/src/index.ts"],
       "@feds/styles": ["libs/feds-styles/src/index.ts"],
       "@stores/planets": ["libs/stores/planets/src/index.ts"],
+      "@stores/socket-io": ["libs/stores/socket-io/src/index.ts"],
       "@stores/trades": ["libs/stores/trades/src/index.ts"],
       "dashboard/Routes": [
         "apps/dashboard/src/app/remote-entry/entry.routes.ts"
       ],
       "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
-      "trades/Routes": ["apps/trades/src/app/remote-entry/entry.routes.ts"]
+      "trades/Routes": ["apps/trades/src/app/remote-entry/entry.routes.ts"],
+      "socket.io-client": ["./node_modules/socket.io-client"]
     }
   },
   "exclude": ["node_modules", "tmp"]

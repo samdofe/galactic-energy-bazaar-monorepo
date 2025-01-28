@@ -6,8 +6,6 @@ import * as defaultLanguageJSON from '../../../public/i18n/en-US.json';
 import { environment } from '../../environments/environment';
 import { RouterOutlet } from '@angular/router';
 
-console.log('Trades :: entry-component : ', process.env.MODE);
-
 @Component({
   imports: [CommonModule, RouterOutlet],
   selector: 'trades-entry',

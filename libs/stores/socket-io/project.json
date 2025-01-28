@@ -1,8 +1,8 @@
 {
-  "name": "stores-trades",
+  "name": "stores-socket-io",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/stores/trades/src",
-  "prefix": "trades",
+  "sourceRoot": "libs/stores/socket-io/src",
+  "prefix": "socketio",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -10,14 +10,14 @@
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/stores/trades/ng-package.json"
+        "project": "libs/stores/socket-io/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/stores/trades/tsconfig.lib.prod.json"
+          "tsConfig": "libs/stores/socket-io/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/stores/trades/tsconfig.lib.json"
+          "tsConfig": "libs/stores/socket-io/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nx/vite:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
-        "reportsDirectory": "../../../coverage/libs/stores/trades"
+        "reportsDirectory": "../../../coverage/libs/stores/socket-io"
       },
       "configurations": {
         "ui": {

@@ -4,19 +4,22 @@ import { TradesListComponent } from '../../ui/trades-list/trades-list.component'
 import { PageEvent } from '@angular/material/paginator';
 import { TradesStore } from '@stores/trades';
 import { FedsCoreAuthStore } from '@feds/core-auth';
+import { SocketIOStore } from '@stores/socket-io';
 
 @Component({
   selector: 'trades-list',
   imports: [ TradesListComponent, CommonModule ] ,
-  providers: [TradesStore],
+  providers: [TradesStore, SocketIOStore],
   templateUrl: './trades-list.page.html',
   styleUrls: ['./trades-list.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TradesListPageComponent implements OnInit {
   tradesStore = inject(TradesStore);
+  socketIOStore = inject(SocketIOStore);
   authStore = inject(FedsCoreAuthStore);
   me = this.authStore.me;
+  latesTrade = this.socketIOStore.getLatestTrade;
 
   ngOnInit(): void {
     this.loadTrades();
@@ -24,6 +27,7 @@ export class TradesListPageComponent implements OnInit {
 
   loadTrades(){
     const query = computed(() => {
+      this.latesTrade();
       const me = this.me();
       let filtersMe = {};
       if(me){

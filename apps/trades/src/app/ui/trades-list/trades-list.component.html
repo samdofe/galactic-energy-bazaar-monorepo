@@ -9,6 +9,10 @@
         {{ getTraderName(element) }}
       </td>
     </ng-container>
+    <ng-container matColumnDef="tradeId">
+      <th mat-header-cell *matHeaderCellDef>TradeId</th>
+      <td mat-cell *matCellDef="let element">{{ element.tradeId }}</td>
+    </ng-container>
     <ng-container matColumnDef="planetName">
       <th mat-header-cell *matHeaderCellDef>Planet</th>
       <td mat-cell *matCellDef="let element">{{ element.planet.name }}</td>
