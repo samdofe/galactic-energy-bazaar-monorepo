@@ -1,2 +1,7 @@
-<h1>I'm the trades LIST page</h1>
-<trades-nx-welcome />
+<div class="trades-list-page-container">
+  <trades-list-component
+    [data]="paginatedData()"
+    [totalPages]="totalPages()"
+    (pageChange)="handlePageChange($event)"
+  ></trades-list-component>
+</div>
