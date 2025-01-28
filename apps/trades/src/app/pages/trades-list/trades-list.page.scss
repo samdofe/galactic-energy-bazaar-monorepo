@@ -1,0 +1,9 @@
+@use 'libs/feds-styles/src/assets/styles/variables' as variables;
+
+.trades-list-page-container{
+  background: variables.$layout-background-transparent;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: variables.$layout-border;
+  padding: 20px;
+}

@@ -1,0 +1,50 @@
+<div class="trades-list-container">
+  <table mat-table [dataSource]="data().data">
+    <ng-container matColumnDef="traderName">
+      <th mat-header-cell *matHeaderCellDef>Trader</th>
+      <td mat-cell *matCellDef="let element" class="trader-image-name">
+        <div class="avatar">
+          <img [src]="element.trader.images.base" alt="element.trader.username">
+        </div>
+        {{ getTraderName(element) }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tradeDate">
+      <th mat-header-cell *matHeaderCellDef>Trade Date</th>
+      <td mat-cell *matCellDef="let element">{{ formatDate(element.tradeDate) }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="zetaJoules">
+      <th mat-header-cell *matHeaderCellDef>Zeta Joules</th>
+      <td mat-cell *matCellDef="let element">{{ element.zetaJoules }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPrice">
+      <th mat-header-cell *matHeaderCellDef>Total Price</th>
+      <td mat-cell *matCellDef="let element">{{ formatCurrency(element.totalPrice) }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns()"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns();"></tr>
+  </table>
+  <mat-paginator
+    [length]="data().meta.total"
+    [pageSize]="itemsPerPage()"
+    [pageIndex]="currentPage() - 1"
+    [pageSizeOptions]="[10, 20, 50]"
+    (page)="onPageChange($event)"
+    [showFirstLastButtons]="true"
+    aria-label="Select page">
+  </mat-paginator>
+</div>
