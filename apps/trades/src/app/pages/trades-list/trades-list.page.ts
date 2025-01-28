@@ -17,9 +17,9 @@ import { SocketIOStore } from '@stores/socket-io';
 export class TradesListPageComponent implements OnInit {
   tradesStore = inject(TradesStore);
   socketIOStore = inject(SocketIOStore);
+  latestTrade = this.socketIOStore.getLatestTrade;
   authStore = inject(FedsCoreAuthStore);
   me = this.authStore.me;
-  latesTrade = this.socketIOStore.getLatestTrade;
 
   ngOnInit(): void {
     this.loadTrades();
@@ -27,7 +27,7 @@ export class TradesListPageComponent implements OnInit {
 
   loadTrades(){
     const query = computed(() => {
-      this.latesTrade();
+      this.latestTrade();
       const me = this.me();
       let filtersMe = {};
       if(me){
