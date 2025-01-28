@@ -1,5 +1,5 @@
 import { inject } from "@angular/core"
-import { pipe, switchMap, tap } from "rxjs"
+import { debounceTime, distinctUntilChanged, pipe, switchMap, tap } from 'rxjs';
 import { patchState, signalStore, withMethods, withState } from "@ngrx/signals"
 import { rxMethod } from "@ngrx/signals/rxjs-interop"
 import { tapResponse } from "@ngrx/operators"
@@ -14,11 +14,11 @@ export const PlanetStore = signalStore(
   withState(initialState),
   withMethods((store, planetStoreSrv = inject(PlanetsStoreService)) => {
 
-    const getAllPlanets = rxMethod<void>(
+    const getPlanets = rxMethod<void>(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap(() => {
-          return planetStoreSrv.getAllPlanet().pipe(
+          return planetStoreSrv.getPlanets().pipe(
             tapResponse({
               next: (planets) => {
                 patchState(store, { planets })
@@ -33,6 +33,8 @@ export const PlanetStore = signalStore(
 
     const getPlanet = rxMethod<string>(
       pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
         tap(() => patchState(store, { isLoading: true })),
         switchMap((planetId) => {
           return planetStoreSrv.getPlanet(planetId).pipe(
@@ -49,7 +51,7 @@ export const PlanetStore = signalStore(
     );
 
     return {
-      getAllPlanets,
+      getPlanets,
       getPlanet,
     }
   }),
