@@ -18,7 +18,8 @@
           { "command": "nx run dashboard:test" },
           { "command": "nx run login:test" },
           { "command": "nx run shell:test" },
-          { "command": "nx run trades:test" }
+          { "command": "nx run trades:test" },
+          { "command": "nx run feds-cdk-rotating-img:test" }
         ],
         "parallel": false
       }

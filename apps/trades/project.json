@@ -48,8 +48,8 @@
           },
           "fileReplacements": [
             {
-              "replace": "src/environments/environment.ts",
-              "with": "src/environments/environment.prod.ts"
+              "replace": "apps/trades/src/environments/environment.ts",
+              "with": "apps/trades/src/environments/environment.prod.ts"
             }
           ]
         },
