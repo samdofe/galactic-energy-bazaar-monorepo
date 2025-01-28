@@ -35,6 +35,7 @@
       "@feds/core/i18n": ["libs/feds-core/i18n/src/index.ts"],
       "@feds/styles": ["libs/feds-styles/src/index.ts"],
       "@stores/planets": ["libs/stores/planets/src/index.ts"],
+      "@stores/trades": ["libs/stores/trades/src/index.ts"],
       "dashboard/Routes": [
         "apps/dashboard/src/app/remote-entry/entry.routes.ts"
       ],

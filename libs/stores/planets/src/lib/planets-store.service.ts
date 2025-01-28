@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { FedsCoreEnvSyncService } from '@feds/core-env';
 import {
   IPlanetStorePlanetModel,
-  IPlanetTradeStatsQueryParams,
-  IPlanetTradeStatsResponse,
   TPlanetStoreEnvironment
 } from './planets-store.model';
 import { Observable } from 'rxjs';
@@ -16,21 +14,14 @@ export class PlanetsStoreService {
   readonly #environment = this.#envSrv.environment();
   readonly #apiPlanetsDomain = (this.#environment() as TPlanetStoreEnvironment).API_PLANETS_DOMAIN;
   readonly #apiPlanetsContext= (this.#environment() as TPlanetStoreEnvironment).API_PLANETS_CONTEXT;
+  readonly #apiBase = `${this.#apiPlanetsDomain}${this.#apiPlanetsContext}`
 
-  getPlanetTradeStats(query: IPlanetTradeStatsQueryParams): Observable<IPlanetTradeStatsResponse>{
-
-    let queryParams = '';
-    Object.entries(query).forEach(([key, value], idx) => {
-      queryParams = idx === 0 ? `?${key}=${value}` : `&${key}=${value}`;
-    })
-    return this.#http.get<IPlanetTradeStatsResponse>(`${this.#apiPlanetsDomain}/${this.#apiPlanetsContext}/${queryParams}`);
-  }
-  getAllPlanet(): Observable<IPlanetStorePlanetModel[]>{
-    return this.#http.get<IPlanetStorePlanetModel[]>(`${this.#apiPlanetsDomain}/${this.#apiPlanetsContext}`);
+  getPlanets(): Observable<IPlanetStorePlanetModel[]>{
+    return this.#http.get<IPlanetStorePlanetModel[]>(`${this.#apiBase}`);
   }
 
   getPlanet(planetId: string): Observable<IPlanetStorePlanetModel>{
-    return this.#http.get<IPlanetStorePlanetModel>(`${this.#apiPlanetsDomain}/${this.#apiPlanetsContext}/${planetId}`);
+    return this.#http.get<IPlanetStorePlanetModel>(`${this.#apiBase}/${planetId}`);
   }
 
   /**
