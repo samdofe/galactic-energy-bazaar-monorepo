@@ -22,7 +22,7 @@
   }
 
   .mat-expansion-panel-header-title {
-    flex: 0 0 80px; // Adjust this value to accommodate the 70px image plus some padding
+    flex: 0 0 80px;
   }
 
   .mat-expansion-panel-header-description {
@@ -36,7 +36,6 @@
       padding: 0 8px;
     }
   }
-
   &__body {
     &__row {
       display: flex;

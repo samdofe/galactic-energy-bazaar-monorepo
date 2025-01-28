@@ -1,92 +1,102 @@
 <div class="planets-list-container">
   <mat-accordion>
     @for (planet of dataPlanet(); track planet.planetId; let idx = $index) {
-      <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
-        <mat-expansion-panel-header>
-          <mat-panel-description>
-            <feds-cdk-rotating-img
-             [dayUrl]="planet.images.base"
-             [nightUrl]="planet.images.second"
-             [cloudsUrl]="planet.images.third"
-             [size]="'70px'"
-             [shadowColor]="planet.color"
-            />
-          </mat-panel-description>
-          <mat-panel-description> {{ planet.name }} </mat-panel-description>
-          <mat-panel-description>
-            {{ planet.buyOrders | number }}
-          </mat-panel-description>
-          <mat-panel-description>
-            {{ planet.sellOrders | number }}
-          </mat-panel-description>
-          <mat-panel-description>
-            {{ planet.totalVolume | number }}
-          </mat-panel-description>
-          <mat-panel-description>
-            {{ planet.avgPrice | number:'1.2-2' }} ({{ planet.currency | currencySymbols}})
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <div class="planets-list-container__body">
-          <div class="planets-list-container__body__row">
-            <div class="planets-list-container__body__row__field">
-              <p> Planet Id : </p>
-              <p>{{ planet.planetId }}</p>
-            </div>
-            <div class="planets-list-container__body__row__field">
-              <p>Planet Name : </p>
-              <p>{{ planet.name }}</p>
-            </div>
-            <div class="planets-list-container__body__row__field">
-              <p>Credit Rating: </p>
-              <p>{{ planet.creditRating }}</p>
-            </div>
+      @if (idx === 0) {
+        <dashboard-planets-list-header />
+      }
+    <mat-expansion-panel
+      (opened)="panelOpenState.set(true)"
+      (closed)="panelOpenState.set(false)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-description>
+          <feds-cdk-rotating-img
+            [dayUrl]="planet.images.base"
+            [nightUrl]="planet.images.second"
+            [cloudsUrl]="planet.images.third"
+            [size]="'70px'"
+            [shadowColor]="planet.color"
+          />
+        </mat-panel-description>
+        <mat-panel-description> {{ planet.name }} </mat-panel-description>
+        <mat-panel-description>
+          {{ planet.buyOrders | number }}
+        </mat-panel-description>
+        <mat-panel-description>
+          {{ planet.sellOrders | number }}
+        </mat-panel-description>
+        <mat-panel-description>
+          {{ planet.totalVolume | number }}
+        </mat-panel-description>
+        <mat-panel-description>
+          {{ planet.avgPrice | number : '1.2-2' }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="planets-list-container__body">
+        <div class="planets-list-container__body__row">
+          <div class="planets-list-container__body__row__field">
+            <p>Planet Id :</p>
+            <p>{{ planet.planetId }}</p>
           </div>
-          <div class="planets-list-container__body__row">
-            <div class="planets-list-container__body__row__field">
-              <p>Creation Date : </p>
-              <p>{{ planet.createdAt | date: 'dd/MM/YYYY' }}</p>
-            </div>
-            <div class="planets-list-container__body__row__field">
-              <p>Currency : </p>
-              <p>{{ planet.currency }}</p>
-            </div>
-            <div class="planets-list-container__body__row__field">
-              <p>Update Date: </p>
-              <p>{{ planet.updatedAt | date: 'dd/MM/YYYY' }}</p>
-            </div>
+          <div class="planets-list-container__body__row__field">
+            <p>Planet Name :</p>
+            <p>{{ planet.name }}</p>
           </div>
-          <div class="planets-list-container__body__row">
-            <div class="planets-list-container__body__row__field">
-              <p>Language : </p>
-              <p>{{ planet.language }}</p>
-            </div>
-            <div class="planets-list-container__body__row__field">
-              <p>Description : </p>
-              <p>
-                {{ planet.description }}
-              </p>
-            </div>
-            <div class="planets-list-container__body__row__field">
-              <p>Risk Factors : </p>
-              <ul>
-                @for (factor of planet.riskFactors; track $index) {
-                  <ol>{{ factor }}</ol>
-                }
-              </ul>
-            </div>
-          </div>
-          <div class="planets-list-container__body__row">
-            <div class="planets-list-container__body__row__field">
-              <p>Trade Volume : </p>
-              <p>{{ planet.tradeVolume | number }}</p>
-            </div>
-            <div class="planets-list-container__body__row__field">
-              <p>Average Daily Consumption: </p>
-              <p>{{ planet.averageDailyConsumption | number }}</p>
-            </div>
+          <div class="planets-list-container__body__row__field">
+            <p>Credit Rating:</p>
+            <p>{{ planet.creditRating }}</p>
           </div>
         </div>
-      </mat-expansion-panel>
+        <div class="planets-list-container__body__row">
+          <div class="planets-list-container__body__row__field">
+            <p>Creation Date :</p>
+            <p>{{ planet.createdAt | date : 'dd/MM/YYYY' }}</p>
+          </div>
+          <div class="planets-list-container__body__row__field">
+            <p>Currency :</p>
+            <p>{{ planet.currency }}</p>
+          </div>
+          <div class="planets-list-container__body__row__field">
+            <p>Update Date:</p>
+            <p>{{ planet.updatedAt | date : 'dd/MM/YYYY' }}</p>
+          </div>
+        </div>
+        <div class="planets-list-container__body__row">
+          <div class="planets-list-container__body__row__field">
+            <p>Language :</p>
+            <p>{{ planet.language }}</p>
+          </div>
+          <div class="planets-list-container__body__row__field">
+            <p>Description :</p>
+            <p>
+              {{ planet.description }}
+            </p>
+          </div>
+          <div class="planets-list-container__body__row__field">
+            <p>Risk Factors :</p>
+            <ul>
+              @for (factor of planet.riskFactors; track $index) {
+              <ol>
+                {{
+                  factor
+                }}
+              </ol>
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="planets-list-container__body__row">
+          <div class="planets-list-container__body__row__field">
+            <p>Trade Volume :</p>
+            <p>{{ planet.tradeVolume | number }}</p>
+          </div>
+          <div class="planets-list-container__body__row__field">
+            <p>Average Daily Consumption:</p>
+            <p>{{ planet.averageDailyConsumption | number }}</p>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
     }
   </mat-accordion>
 </div>
