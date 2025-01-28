@@ -12,6 +12,19 @@ import {
 
 const initialState: ITradesStoreState = {
   isLoading: false,
+  tradesStats: [],
+  tradesList:{
+    data: [],
+    meta: {
+      total: 0,
+      page: 0,
+      limit: 0
+    }
+  },
+  leaderBoards: {
+    planetLeaderboard: [],
+    traderLeaderboard: [],
+  }
 }
 
 export const TradesStore = signalStore(

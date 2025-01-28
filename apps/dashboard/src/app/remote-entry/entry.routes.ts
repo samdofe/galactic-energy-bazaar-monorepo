@@ -1,6 +1,11 @@
 import { Route } from '@angular/router';
-import { DashboardPageComponent } from '../pages/dashboard/dashboard.page';
+import { RemoteEntryComponent } from './entry.component';
 
 export const remoteRoutes: Route[] = [
-  { path: '', component: DashboardPageComponent },
+  {
+    path: '',
+    component: RemoteEntryComponent,
+    loadChildren: () =>
+      import('../pages/pages.routes').then((m) => m.remoteRoutes),
+  },
 ];

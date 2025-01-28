@@ -22,6 +22,11 @@ export const remoteRoutes: Route[] = [
         redirectTo: 'dashboard',
         pathMatch: 'full',
       },
+      {
+        path: '**',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
     ]
   }
 ];

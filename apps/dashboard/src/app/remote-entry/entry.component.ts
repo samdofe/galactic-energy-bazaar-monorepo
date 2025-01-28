@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardPageComponent } from '../pages/dashboard/dashboard.page';
+import { RouterOutlet } from '@angular/router';
 
 console.log('Dashboard :: entry-component : ', process.env['MODE']);
 
 @Component({
-  imports: [CommonModule, DashboardPageComponent],
+  imports: [CommonModule, RouterOutlet],
   selector: 'dashboard-entry',
   template: `
-    <dashboard-page></dashboard-page>
+    <router-outlet/>
   `,
 })
 export class RemoteEntryComponent {}

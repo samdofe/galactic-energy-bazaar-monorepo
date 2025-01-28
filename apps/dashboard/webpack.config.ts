@@ -13,7 +13,7 @@ import config from './module-federation.config';
 
 const federatedModules = async () => withModuleFederation({ ...config }, { dts: false });
 
-export default async (config, context) => {
+export default async (config) => {
   const federatedModuleConfig = await federatedModules();
   return merge(federatedModuleConfig(config), {
     plugins: [

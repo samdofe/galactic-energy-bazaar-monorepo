@@ -11,7 +11,7 @@ import { fedsCoreAuthInterceptor } from '@feds/core/auth';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { fedsCoreI18nHttpLoaderFactory } from '@feds/core/i18n';
-import { fedsCoreEnvInitializerSync } from '@feds/core-env';
+import { fedsCoreEnvInitializerSync } from '@feds/core/env';
 import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {

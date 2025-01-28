@@ -101,7 +101,7 @@ export interface ITradesStoreGetLeaderBoardsResponse {
 
 export interface ITradesStoreState {
   isLoading: boolean,
-  tradesList?: ITradesStoreTradesList,
-  leaderBoards?: ITradesStoreGetLeaderBoardsResponse,
-  tradesStats?: ITradesStoreStatsModel[]
+  tradesList: ITradesStoreTradesList,
+  leaderBoards: ITradesStoreGetLeaderBoardsResponse,
+  tradesStats: ITradesStoreStatsModel[]
 }

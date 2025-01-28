@@ -2,10 +2,14 @@
   <div class="dashboard-content">
     <div class="planet-stats">
       <p>{{ 'DASHBOARD_APP.LOCAL_VARIABLE' | translate }}</p>
-      <dashboard-planets-list [dataPlanet]="planetsList()"/>
+      @if (tradesStore.tradesStats()){
+        <dashboard-planets-list [dataPlanet]="tradesStore.tradesStats()"/>
+      }
     </div>
     <div class="leaderboard">
-      <dashboard-leaderboard-list [dataLeaderboard]="leaderboardList()"></dashboard-leaderboard-list>
+      @if(tradesStore.leaderBoards()){
+        <dashboard-leaderboard-list [dataLeaderboard]="tradesStore.leaderBoards()"></dashboard-leaderboard-list>
+      }
     </div>
   </div>
 </div>

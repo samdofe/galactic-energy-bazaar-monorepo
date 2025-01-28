@@ -5,12 +5,8 @@
   overflow-x: auto;
 
   table {
-    @include mat.table-overrides((
-        background-color: transparent,
-    ));
     width: 100%;
     border-collapse: collapse;
-
     th, td {
       padding: 12px;
       text-align: left;
@@ -24,6 +20,9 @@
     tr:hover {
       background-color: var(--mat-sys-background);
     }
+    @include mat.table-overrides((
+            background-color: transparent,
+    ));
   }
 
   .mat-mdc-paginator {
