@@ -307,6 +307,15 @@ importers:
         specifier: ^19.0.0
         version: 19.0.7(rxjs@7.8.1)(zone.js@0.15.0)
 
+  libs/feds-core-libs/feds-core-env:
+    dependencies:
+      '@angular/common':
+        specifier: ^19.0.0
+        version: 19.0.7(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.0.7(rxjs@7.8.1)(zone.js@0.15.0)
+
   libs/feds-core-libs/feds-core-i18n:
     dependencies:
       '@angular/common':
@@ -339,6 +348,24 @@ importers:
       '@angular/material':
         specifier: ~19.1.1
         version: 19.1.1(xxgoxg5z36dhmmia6ige5ta4ga)
+
+  libs/stores/planets:
+    dependencies:
+      '@angular/common':
+        specifier: ^19.0.0
+        version: 19.0.7(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.0.7(rxjs@7.8.1)(zone.js@0.15.0)
+
+  libs/stores/trades:
+    dependencies:
+      '@angular/common':
+        specifier: ^19.0.0
+        version: 19.0.7(@angular/core@19.0.7(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
+      '@angular/core':
+        specifier: ^19.0.0
+        version: 19.0.7(rxjs@7.8.1)(zone.js@0.15.0)
 
 packages:
 
