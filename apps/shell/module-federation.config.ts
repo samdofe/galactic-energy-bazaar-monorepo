@@ -15,6 +15,19 @@ const config: ModuleFederationConfig = {
    *
    */
   remotes: ['dashboard', 'trades', 'login'],
+  shared: (libraryName, defaultConfig) => {
+    if (libraryName === 'socket.io-client') {
+      return {
+        ...defaultConfig,
+        singleton: true,
+        strictVersion: false,
+        requiredVersion: '^4.8.1',
+      };
+    }
+
+    // return default config for other libraries
+    return defaultConfig;
+  },
 };
 
 /**
