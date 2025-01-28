@@ -21,5 +21,5 @@ export interface IFedsCoreAuthMe {
 export interface IFedsCoreAuthState {
   token: string | null;
   isLoading: boolean;
-  me: any | null;
+  me: IFedsCoreAuthMe | null;
 }

@@ -1,8 +1,9 @@
-import { Component, ChangeDetectionStrategy, inject, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, OnInit, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TradesListComponent } from '../../ui/trades-list/trades-list.component';
 import { PageEvent } from '@angular/material/paginator';
 import { TradesStore } from '@stores/trades';
+import { FedsCoreAuthStore } from '@feds/core-auth';
 
 @Component({
   selector: 'trades-list',
@@ -14,10 +15,27 @@ import { TradesStore } from '@stores/trades';
 })
 export class TradesListPageComponent implements OnInit {
   tradesStore = inject(TradesStore);
+  authStore = inject(FedsCoreAuthStore);
+  me = this.authStore.me;
 
-  ngOnInit(){
-    this.tradesStore.updateTradesFilters({planetId: 'NOV07'});
-    const query = this.tradesStore.tradesFilters;
+  ngOnInit(): void {
+    this.loadTrades();
+  }
+
+  loadTrades(){
+    const query = computed(() => {
+      const me = this.me();
+      let filtersMe = {};
+      if(me){
+        const { planetId, role } = me;
+        filtersMe = role === 'trader' ? { planetId } : {};
+      }
+      const filtersQuery = this.tradesStore.tradesFilters();
+      return {
+        ...filtersMe,
+        ...filtersQuery
+      }
+    })
     this.tradesStore.getTrades(query);
   }
 

@@ -17,6 +17,7 @@ export class TradesListComponent {
   pageChange = output<PageEvent>();
   displayedColumns = signal<string[]>([
     'traderName',
+    'planetName',
     'type',
     'status',
     'tradeDate',
