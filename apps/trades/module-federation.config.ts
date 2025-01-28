@@ -5,6 +5,7 @@ const config: ModuleFederationConfig = {
   exposes: {
     './Routes': 'apps/trades/src/app/remote-entry/entry.routes.ts',
   },
+  remotes: ['login'],
 };
 
 /**

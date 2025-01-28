@@ -12,7 +12,9 @@ import {
 } from './trades-store.model';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable(
+  {providedIn: 'root'}
+)
 export class TradesStoreService {
   readonly #http = inject(HttpClient);
   readonly #envSrv = inject(FedsCoreEnvSyncService);
@@ -28,7 +30,7 @@ export class TradesStoreService {
   ): Observable<ITradesStoreTradesList> {
     let queryParams = '';
     Object.entries(query).forEach(([key, value], idx) => {
-      queryParams = idx === 0 ? `?${key}=${value}` : `&${key}=${value}`;
+      queryParams = idx === 0 ? `?${key}=${value}` : `${queryParams}&${key}=${value}`;
     });
     return this.#http.get<ITradesStoreTradesList>(
       `${this.#apiBase}${queryParams}`

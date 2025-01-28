@@ -103,5 +103,7 @@ export interface ITradesStoreState {
   isLoading: boolean,
   tradesList: ITradesStoreTradesList,
   leaderBoards: ITradesStoreGetLeaderBoardsResponse,
-  tradesStats: ITradesStoreStatsModel[]
+  tradesStats: ITradesStoreStatsModel[],
+  tradesFilters: ITradesStoreTradesQueryParams,
+  tradesStatsFilters: TTradesStoreTradesStatsQueryParams
 }

@@ -7,7 +7,9 @@ import {
 } from './planets-store.model';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PlanetsStoreService {
   readonly #http = inject(HttpClient);
   readonly #envSrv = inject(FedsCoreEnvSyncService);

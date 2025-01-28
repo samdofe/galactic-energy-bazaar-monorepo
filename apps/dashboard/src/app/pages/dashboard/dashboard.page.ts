@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FedsCoreI18nService } from '@feds/core-i18n';
@@ -7,9 +7,7 @@ import {environment} from '../../../environments/environment';
 import * as defaultLanguageJSON from '../../../../public/i18n/en-US.json';
 import { PlanetsListComponent } from '../../ui/planets-list/planets-list.component';
 import { LeaderboardListComponent } from '../../ui/leaderboard-list/leaderboard-list.component';
-import { IPlanetInfo } from '../../models/planet.model';
-import { ILeaderboard } from '../../models/leaderboard.model';
-import { TradesStore, TradesStoreService } from '@stores/trades';
+import { TradesStore } from '@stores/trades';
 
 @Component({
   selector: 'dashboard-page',
@@ -19,7 +17,7 @@ import { TradesStore, TradesStoreService } from '@stores/trades';
     LeaderboardListComponent,
     TranslateModule
   ],
-  providers: [TradesStore, TradesStoreService],
+  providers: [TradesStore],
   templateUrl: './dashboard.page.html',
   styleUrl: './dashboard.page.scss',
 })

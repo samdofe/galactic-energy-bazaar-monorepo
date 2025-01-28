@@ -1,7 +1,8 @@
 <div class="trades-list-page-container">
-  <trades-list-component
-    [data]="paginatedData()"
-    [totalPages]="totalPages()"
-    (pageChange)="handlePageChange($event)"
-  ></trades-list-component>
+  @if(tradesStore.tradesList()){
+    <trades-list-component
+      [data]="tradesStore.tradesList()"
+      (pageChange)="handlePageChange($event)"
+    ></trades-list-component>
+  }
 </div>

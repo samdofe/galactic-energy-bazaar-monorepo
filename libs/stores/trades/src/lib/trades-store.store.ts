@@ -24,13 +24,23 @@ const initialState: ITradesStoreState = {
   leaderBoards: {
     planetLeaderboard: [],
     traderLeaderboard: [],
+  },
+  tradesFilters: {},
+  tradesStatsFilters:{
+    dateFrom: '',
+    dateTo: ''
   }
 }
 
 export const TradesStore = signalStore(
   withState(initialState),
   withMethods((store, tradesStoreService = inject(TradesStoreService)) => {
-
+    const updateTradesFilters = (updatedFilters: ITradesStoreTradesQueryParams) => {
+      patchState(store, (state) => ({ tradesFilters: {...state.tradesFilters, ...updatedFilters}}) );
+    }
+    const updateTradesStatsFilters = (updatedFilters: TTradesStoreTradesStatsQueryParams) => {
+      patchState(store, (state) => ({ tradesStatsFilters: {...state.tradesStatsFilters, ...updatedFilters}}) );
+    }
     const getLeaderBoards = rxMethod<void>(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
@@ -47,7 +57,6 @@ export const TradesStore = signalStore(
         }),
       ),
     );
-
     const getTradeStats = rxMethod<TTradesStoreTradesStatsQueryParams>(
       pipe(
         debounceTime(300),
@@ -66,7 +75,6 @@ export const TradesStore = signalStore(
         }),
       ),
     );
-
     const getTrades = rxMethod<ITradesStoreTradesQueryParams>(
       pipe(
         debounceTime(300),
@@ -86,11 +94,12 @@ export const TradesStore = signalStore(
       ),
     );
 
-
     return {
       getLeaderBoards,
       getTradeStats,
-      getTrades
+      getTrades,
+      updateTradesFilters,
+      updateTradesStatsFilters
     }
   }),
 )
