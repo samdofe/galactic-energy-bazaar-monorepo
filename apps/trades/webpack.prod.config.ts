@@ -21,6 +21,9 @@ const federatedModules = async () => withModuleFederation(
      *   ['app2', 'https://app2.example.com'],
      * ]
      */
+    remotes: [
+      ['login', 'http://localhost:8081']
+    ]
   },
   { dts: false }
 );

@@ -32,7 +32,7 @@ export class LoginPageComponent implements OnInit {
     console.log('LOGIN :: environment : ', this.environment());
     this.i18nTranslate.init({
       nameSpace: 'login',
-      useLang: 'AETH',
+      //useLang: 'AETH',
       defaultLangJSON: defaultLanguageJSON,
     });
     // Observe token changes using an effect

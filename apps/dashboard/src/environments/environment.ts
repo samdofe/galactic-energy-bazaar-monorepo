@@ -6,7 +6,6 @@ export const environment = {
   API_TRADES_CONTEXT: '/api/v1/trades',
   API_SOCKET_DOMAIN: 'http://localhost:3000',
   API_I18N_ENDPOINT: 'http://localhost:3000/api/v1/i18n',
-  FEATURE_FLAG: false,
   DASHBOARD_APP :  {
     NANE: 'DASHBOARD'
   }

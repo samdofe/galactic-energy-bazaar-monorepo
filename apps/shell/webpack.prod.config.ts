@@ -19,6 +19,11 @@ export default withModuleFederation(
      *   ['app2', 'https://app2.example.com'],
      * ]
      */
+    remotes: [
+      ['login', 'http://localhost:8081'],
+      ['dashboard', 'http://localhost:8082'],
+      ['trades', 'http://localhost:8083']
+    ]
   },
   { dts: false }
 );
