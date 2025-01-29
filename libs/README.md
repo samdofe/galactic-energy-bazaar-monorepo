@@ -79,15 +79,15 @@ Run the following commands from the project root to manage and build libraries:
 
   #### **With Nx Console**:
 
-  ![Nx console](../../readme-helpers/assets/images/vitest-ui-nx-console.gif)
+  ![Nx console](../readme-helpers/assets/images/vitest-ui-nx-console.gif)
 
   #### **With the terminal**:
 
-  ![Nx console](../../readme-helpers/assets/images/vitest-ui-terminal.gif)
+  ![Nx console](../readme-helpers/assets/images/vitest-ui-terminal.gif)
 
   #### **Vitest UI**
 
-  ![Nx console](../../readme-helpers/assets/images/vitest-ui-dashboard.gif)
+  ![Nx console](../readme-helpers/assets/images/vitest-ui-dashboard.gif)
 
 ---
 
@@ -97,7 +97,7 @@ Run the following commands from the project root to manage and build libraries:
 3. Use **`nx graph`** to visualize library dependencies across the monorepo.
 
 
-![Nx console](../../readme-helpers/assets/images/nx-use.gif)
+![Nx console](../readme-helpers/assets/images/nx-use.gif)
 
 ---
 For more information, consult the general documentation in the root README.
