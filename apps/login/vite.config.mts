@@ -28,5 +28,8 @@ export default defineConfig({
       reportsDirectory: '../../coverage/apps/login',
       provider: 'v8',
     },
+    api: {
+      port:3002
+    }
   }
 });

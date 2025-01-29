@@ -49,10 +49,12 @@ ___
 3. Add environment variables:
     - Contact the Author to provide valid environment variables
 
-4 Start Shell App:
+4. Start Shell App:
    ```bash
    npm run dev
    ```
+
+![Nx console](readme-helpers/assets/images/run-shell.gif)
 ___
 
 ## Monorepo Structure
@@ -189,10 +191,10 @@ ___
 
 For more details on the applications and libraries, check the `README.md` files in each subdirectory:
 
-- [Login](./apps/shell/README.md)
+- [Login](./apps/login/README.md)
 - [Shell](./apps/shell/README.md)
-- [Dashboard](./apps/shell/README.md)
-- [Trades](./apps/podcast/README.md)
+- [Dashboard](./apps/dashboard/README.md)
+- [Trades](./apps/trades/README.md)
 - [libs](./libs/README.md)
 - [tools](./tools/README.md)
 
