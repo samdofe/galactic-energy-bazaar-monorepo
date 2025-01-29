@@ -8,21 +8,7 @@ The **tools/** folder contains custom scripts developed with **Nx** to facilitat
 
 ## Available Scripts
 
-### 1. **serve-multiple**
-- **Description**: Starts multiple applications (Shell and Podcast) in preview mode simultaneously.
-- **Command**:
-  ```bash
-  pnpm start:all:preview
-  ```
-
-### 2. **build-apps**
-- **Description**: Clears the Nx cache and builds all applications (Shell and Podcast).
-- **Command**:
-  ```bash
-  pnpm build:apps
-  ```
-
-### 3. **build-libs**
+### 1. **build-libs**
 - **Description**: Clears the Nx cache and builds all the libraries in the Design System.
 - **Command**:
   ```bash
@@ -40,14 +26,14 @@ The **tools/** folder contains custom scripts developed with **Nx** to facilitat
 - **Description**: Creates a new standard library with the predefined structure.
 - **Command**:
   ```bash
-  pnpm new:lib --name=my-lib
+  HUB=feds-cdk NAME=cdk-datepicker pnpm g:library
   ```
 
-### 6. **new-cdk-lib**
-- **Description**: Creates a new library for the Component Dev Kit (CDK) with the predefined structure.
+### 6. **new-HUB-lib**
+- **Description**: Creates a new library for the specified HUB with the predefined structure.
 - **Command**:
   ```bash
-  pnpm new:cdk:lib --name=my-cdk-lib
+  NAME=utils pnpm g:library:hub
   ```
 
 ---
